@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../../Pages/Home/Banner/Banner';
 import BSummery from './BSummery/BSummery';
 import Parts from './Parts/Parts';
+import Reviews from './Reviews/Reviews';
 
 
 const Home = () => {
@@ -11,8 +12,11 @@ const Home = () => {
                 <Banner />
                 <Parts />
             </div>
-            <div>
+            <div className='mb-5'>
                 <BSummery />
+            </div>
+            <div className='md:px-20'>
+                <Reviews />
             </div>
         </div>
     );
