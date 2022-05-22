@@ -13,7 +13,7 @@ const SinglePart = ({ p }) => {
                 <h3 className='text-lg font-semibold'>Price : <span className='text-primary'>${price}</span></h3>
                 <h3 className='text-lg font-medium'>Available Quantity : <span className='text-secondary font-bold'>{availableQuantity}</span></h3>
                 <h3 className='text-lg font-medium'>Minimum Order Quantity : <span className='font-bold text-accent'>{minQuantity}</span> </h3>
-                <p className='mb-3'>{des}</p>
+                <p className='mb-4  mt-2 text-gray-500 '>{des}</p>
                 <button className='btn text-white btn-secondary w-full'>Buy Now</button>
             </div>
         </div>

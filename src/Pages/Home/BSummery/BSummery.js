@@ -1,7 +1,7 @@
 import React from 'react';
 import './BSummery.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlag, faBook ,faUsers , faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFlag, faBook ,faUsers , faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 const BSummery = () => {
     return (

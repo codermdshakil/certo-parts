@@ -1,0 +1,29 @@
+.footer-section {
+    background-color: #151616;
+    color: gray;
+}
+
+.hero_title {
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Teko', sans-serif;
+}
+
+.parts_title {
+    font-size: 28px;
+    color: #ffd910;
+}
+
+.social_mediaIcon img {
+    width: 35px;
+    height: 35px;
+    margin-right: 7px;
+}
+
+.subscribe {
+    color: #ffff;
+    border: none;
+    background-color: #ff3030;
+}

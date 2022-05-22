@@ -16,7 +16,10 @@ const Parts = () => {
 
     return (
         <section>
-            <h2 className='font-bold text-3xl py-10 md:px-0 px-10 '>OUR <span className='font-bold text-primary'>PARTS</span></h2>
+            <div className=' py-10 md:px-0 px-10 '>
+                <h2 className='text-3xl font-bold'>OUR <span className='font-bold text-3xl text-primary'>PARTS</span></h2>
+                <h3 className='text-secondary'>Featured Part's</h3>    
+            </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-10'>
                 {
                     allParts.map(p => <SinglePart
