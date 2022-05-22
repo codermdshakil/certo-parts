@@ -1,0 +1,20 @@
+.bSummery-container{
+    background-image: url(../../../Images/bg-.png);
+    background-repeat: no-repeat;
+    height: 350px;
+    margin-bottom: 50px;
+}
+
+.bSummery-Content {
+    padding-top: 150px;
+}
+
+@media screen and (max-width:1024px) {
+    .bSummery-container{
+        height: initial;
+        background-image: none;
+        background-color: aliceblue;
+
+    }
+    
+}

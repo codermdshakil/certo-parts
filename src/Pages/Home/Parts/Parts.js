@@ -15,7 +15,7 @@ const Parts = () => {
     }
 
     return (
-        <section className='md:px-20 '>
+        <section>
             <h2 className='font-bold text-3xl py-10 md:px-0 px-10 '>OUR <span className='font-bold text-primary'>PARTS</span></h2>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-10'>
                 {
