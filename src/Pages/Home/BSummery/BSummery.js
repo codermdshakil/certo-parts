@@ -41,7 +41,7 @@ const BSummery = () => {
                        <h3 className='text-lg text-secondary'>Don't hesilate to contact us.</h3>
                     </div>
                     <div className='flex justify-center items-center'>
-                      <button className='btn mr-10 text-white' >Request for Quote</button>
+                      <button className='btn md:mr-5 mr-1 text-white' >Request for Quote</button>
                       <button className='btn btn-secondary text-white'>Contact Us</button>
                     </div>
                 </div>
