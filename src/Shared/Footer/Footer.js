@@ -47,7 +47,7 @@ const Footer = () => {
                         <h2 className='text-2xl font-bold text-white mb-2'>NewsLetter</h2>
                      <form onSubmit={handleNewLetterEmail}>
                          <input type="text" placeholder='Email' name='email' className='w-full py-3 px-3 rounded-lg' />
-                         <button  className='btn subscribe w-full mt-4 text-center mx-auto'>Subscribe Now</button>
+                         <button  className='btn btn-md subscribe w-full mt-4 text-center mx-auto ring-2 ring-white'>Subscribe Now</button>
                      </form>
                     </div>
                 </div>
