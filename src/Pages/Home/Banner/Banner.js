@@ -62,7 +62,7 @@ const Banner = () => {
                                 <button className="btn btn-secondary text-white mb-2">Buy Bow</button>
                             </div>
                             <div>
-                                <img src={banner3} className="lg:w-10/12 md:w-8/12 sm:w-full mx-auto" alt="" />
+                                <img src={banner3} className="lg:w-11/12 md:w-8/12 sm:w-full mx-auto" alt="" />
                             </div>
                         </div>
                     </div>
