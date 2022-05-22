@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faEnvelope, faPhone, faBell} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import fbLogo from '../../Images/socialIcons/fb.png';
 import insLogo from '../../Images/socialIcons/ins.png';
@@ -13,11 +13,13 @@ import paymentImg from '../../Images/socialIcons/payment.png';
 const Footer = () => {
 
     const handleNewLetterEmail = e => {
-        e.preventDefault()
+        e.preventDefault();
+        // const email = e.target.email.value;
+        e.target.reset();
     }
 
     return (
-        <div className='footer-section  py-12'>
+        <div className='footer-section mt-20 py-12'>
             <div className='md:px-20 px-10'>
                 <div className='grid gap-10 lg:grid-cols-4 md:grid-cols-2 grid-cols-1'>
                     <div className=' md:w-full w-11/12'>
@@ -35,19 +37,19 @@ const Footer = () => {
                     </div>
                     <div className='md:w-full w-11/12'>
                         <h2 className='text-2xl font-bold text-white mb-2'> Follow Us </h2>
-                        <div className='social_mediaIcon flex'>
+                        <div className='social_mediaIcon flex mt-3 mb-2'>
                             <img src={fbLogo} alt="fb_logo" />
                             <img src={insLogo} alt="instagram_logo" />
                             <img src={twLogo} alt="twitter_logo" />
                             <img src={inLogo} alt="in_logo" />
                         </div>
-                        <img src={paymentImg} className="mt-2" alt="paymentImg_logo " />
+                        <img src={paymentImg} className="mt-3" alt="paymentImg_logo " />
                     </div>
                     <div className='md:w-full w-11/12'>
                         <h2 className='text-2xl font-bold text-white mb-2'>NewsLetter</h2>
                      <form onSubmit={handleNewLetterEmail}>
-                         <input type="text" placeholder='Email' name='email' className='w-full py-3 px-3 rounded-lg' />
-                         <button  className='btn btn-md subscribe w-full mt-4 text-center mx-auto ring-2 ring-white'>Subscribe Now</button>
+                         <input type="text" placeholder='Email' name='email' className='w-full py-3 px-3 rounded-lg' required/>
+                         <button  className='btn btn-md subscribe w-full mt-4 text-center mx-auto ring-2 ring-white'>Subscribe Now <FontAwesomeIcon className='ml-2' icon={faBell} /></button>
                      </form>
                     </div>
                 </div>

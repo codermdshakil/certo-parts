@@ -1,14 +1,17 @@
 .bSummery-container{
-    background-image: url(../../../Images/bg.png);
+    background-image: url(../../../Images/b-summery.svg);
     background-repeat: no-repeat;
     height: 350px;
     margin-bottom: 50px;
 }
 
 .bSummery-Content {
-    padding-top: 150px;
+    padding-top: 100px;
 }
-
+.summery-content{
+    background:white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 @media screen and (max-width:1024px) {
     .bSummery-container{
         height: initial;
@@ -16,5 +19,10 @@
         background-color: aliceblue;
 
     }
+    .bSummery-Content {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
     
 }
+

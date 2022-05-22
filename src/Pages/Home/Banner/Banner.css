@@ -22,6 +22,16 @@
     background-position: top center;
 }
 
+.swiper-button-prev {
+    color: #33b3ec;
+    font-weight: bolder;
+}
+
+.swiper-button-next {
+    color: #33b3ec;
+    font-weight: bolder;
+}
+
 /* media query  */
 
 /* medium device  */
