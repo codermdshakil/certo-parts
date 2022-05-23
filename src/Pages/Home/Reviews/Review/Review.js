@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faLocationDot, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import './Review.css';
 
 
@@ -12,8 +12,8 @@ const Review = ({ r }) => {
         <article className='p-5 border-2 border-white hover:border-2 hover:border-yellow-300 rounded-xl custom_shadow md:w-full w-5/6 mx-auto mb-10' >
             <div>
                 <div className='flex justify-evenly'>
-                    <div class="avatar">
-                        <div class="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+                    <div className="avatar">
+                        <div className="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
                             <img src={img} alt="client_picture" />
                         </div>
                     </div>
@@ -26,7 +26,7 @@ const Review = ({ r }) => {
                                 <FontAwesomeIcon className='check_icon' icon={faCheck} />
                             </div>
                         </div>
-                        <h4 className='text-slate-600'>{address}</h4>
+                        <h4 className='text-slate-600'>{address} <FontAwesomeIcon className='text-green-600' icon={ faLocationDot }></FontAwesomeIcon> </h4>
                     </div>
                 </div>
                 <h2 className=' mt-4 text-2xl'>{title}</h2>

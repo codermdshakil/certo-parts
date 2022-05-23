@@ -13,9 +13,6 @@ const Reviews = () => {
         return <Spinner />
     }
 
-    console.log(allReviews)
-
-
     return (
         <div>
             <div className='mt-20 mb-12'>

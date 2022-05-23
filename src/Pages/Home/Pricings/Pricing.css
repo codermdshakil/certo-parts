@@ -1,0 +1,90 @@
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 221, 80);
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: rgb(237, 226, 12);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px rgb(0, 221, 80);
+}
+
+input:checked+.slider:before {
+    transform: translateX(1.5em);
+}
+
+.pricing_box {
+    margin-bottom: 40px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.check_icon_style {
+    width: 8px;
+    height: 8px;
+    padding: 5px;
+    color: #ffff;
+    margin-top: 3px;
+    margin-left: 5px;
+    border-radius: 50%;
+    background-color: rgb(0, 221, 80);
+}
+
+.store_icon_style {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    width: 20px;
+    height: 20px;
+    color: #ffff;
+    font-size: 30px;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(0, 221, 80);
+}
+
+@media screen and (max-width:1024px) {
+
+    .store_icon_style {
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        color: #ffff;
+        font-size: 30px;
+    }
+}
