@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faEnvelope, faPhone, faBell, faCopy } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faEnvelope, faPhone, faBell } from '@fortawesome/free-solid-svg-icons';
 import fbLogo from '../../Images/socialIcons/fb.png';
 import insLogo from '../../Images/socialIcons/ins.png';
 import twLogo from '../../Images/socialIcons/tw.png';
