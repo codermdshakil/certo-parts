@@ -15,7 +15,7 @@ const Reviews = () => {
 
     return (
         <div>
-            <div className='mt-20 mb-14'>
+            <div className='mt-20 mb-14' id='reviews'>
                 <h1 className='text-3xl font-bold text-center'>What <span className='font-bold text-primary'> Client's </span>  say about Us</h1>
                 <h3 className='text-lg text-center text-secondary'> Clients Reviews({allReviews.length})</h3>
             </div>

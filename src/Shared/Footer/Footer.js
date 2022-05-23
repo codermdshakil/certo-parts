@@ -1,8 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faEnvelope, faPhone, faBell} from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { faLocationDot, faEnvelope, faPhone, faBell } from '@fortawesome/free-solid-svg-icons';
 import fbLogo from '../../Images/socialIcons/fb.png';
 import insLogo from '../../Images/socialIcons/ins.png';
 import twLogo from '../../Images/socialIcons/tw.png';
@@ -14,12 +13,11 @@ const Footer = () => {
 
     const handleNewLetterEmail = e => {
         e.preventDefault();
-        // const email = e.target.email.value;
         e.target.reset();
     }
 
     return (
-        <div className='footer-section mt-20 py-12'>
+        <div className='footer-section mt-20 py-12' id='footer'>
             <div className='md:px-20 px-10'>
                 <div className='grid gap-10 lg:grid-cols-4 md:grid-cols-2 grid-cols-1'>
                     <div className=' md:w-full w-11/12'>
@@ -32,8 +30,12 @@ const Footer = () => {
                     </div>
                     <div className='md:w-full w-11/12'>
                         <h2 className='text-2xl font-bold text-white  mb-2'>Quick Links</h2>
-                       <Link to='/'>Banner</Link> <br />
-                       <Link to='/parts'>Parts</Link>
+                        <a href='home#parts'>Parts</a>  <br />
+                        <a href='home#bsummery'>Business Summary</a> <br />
+                        <a href='home#reviews'>Reviews</a> <br />
+                        <a href='home#pricing'>Pricing</a> <br />
+                        <a href='home#contact'>Contact</a> <br />
+                        <a href='home#footer'>Footer</a>
                     </div>
                     <div className='md:w-full w-11/12'>
                         <h2 className='text-2xl font-bold text-white mb-2'> Follow Us </h2>
@@ -47,10 +49,10 @@ const Footer = () => {
                     </div>
                     <div className='md:w-full w-11/12'>
                         <h2 className='text-2xl font-bold text-white mb-2'>NewsLetter</h2>
-                     <form onSubmit={handleNewLetterEmail}>
-                         <input type="text" placeholder='Email' name='email' className='w-full py-3 px-3 rounded-lg' required/>
-                         <button  className='btn btn-md subscribe w-full mt-4 text-center mx-auto ring-2 ring-white'>Subscribe Now <FontAwesomeIcon className='ml-2' icon={faBell} /></button>
-                     </form>
+                        <form onSubmit={handleNewLetterEmail}>
+                            <input type="text" placeholder='Email' name='email' className='w-full py-3 px-3 rounded-lg' required />
+                            <button className='btn btn-md subscribe w-full mt-4 text-center mx-auto ring-2 ring-white'>Subscribe Now <FontAwesomeIcon className='ml-2' icon={faBell} /></button>
+                        </form>
                     </div>
                 </div>
             </div>

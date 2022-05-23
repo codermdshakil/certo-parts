@@ -13,7 +13,7 @@ import './Banner.css';
 
 const Banner = () => {
     return (
-        <>
+        <div id="banner">
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
@@ -69,7 +69,7 @@ const Banner = () => {
 
                 </SwiperSlide>
             </Swiper>
-        </>
+        </div>
     );
 };
 

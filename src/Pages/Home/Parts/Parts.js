@@ -15,7 +15,7 @@ const Parts = () => {
 
     return (
         <section>
-            <div className=' py-10 md:px-0 px-10 '>
+            <div className=' py-10 md:px-0 px-10 ' id='parts'>
                 <h2 className='text-3xl text-center font-bold'>OUR <span className='font-bold text-3xl text-primary'>PARTS</span></h2>
                 <h3 className='text-secondary text-center'>Featured Part's</h3>    
             </div>

@@ -18,7 +18,7 @@ const Pricings = () => {
 
 
     return (
-        <div className='mt-5'>
+        <div className='mt-5' id='pricing'>
             <div className='text-center mb-10'>
                 <h2 className='text-4xl font-bold mb-3'> <span className='text-primary'>Pricing</span> and Plans</h2>
                 <div className='flex justify-center items-center'>

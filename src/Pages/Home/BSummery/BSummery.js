@@ -5,7 +5,7 @@ import { faFlag, faBook, faUsers, faThumbsUp } from '@fortawesome/free-solid-svg
 
 const BSummery = () => {
     return (
-        <div >
+        <div id='bsummery'>
             <div className='md:w-1/2 w-10/12 mx-auto text-center mt-10'>
                 <h1 className='text-4xl font-bold'>Millions <span className='font-bold text-primary'> Business</span> Treat Us</h1>
                 <h3 className='text-lg text-secondary'>Try to understand user Expectation</h3>

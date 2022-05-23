@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../../Pages/Home/Banner/Banner';
 import BSummery from './BSummery/BSummery';
+import ContactUs from './ContactUs/ContactUs';
 import Parts from './Parts/Parts';
 import Pricings from './Pricings/Pricings';
 import Reviews from './Reviews/Reviews';
@@ -19,6 +20,9 @@ const Home = () => {
             <div className='md:px-20'>
                 <Reviews />
                 <Pricings />
+            </div>
+            <div>
+                <ContactUs />
             </div>
         </div>
     );

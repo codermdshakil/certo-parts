@@ -1,0 +1,6 @@
+.contact_wrapper{
+    background-image: url(../../../Images/contact-bg-transparent.svg);
+    background-repeat: no-repeat;
+    height: 600px;
+    background-position: top center;
+}

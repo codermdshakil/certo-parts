@@ -4,6 +4,7 @@ import { faCheck, faLocationDot, faStar, faStarHalfStroke } from '@fortawesome/f
 import './Review.css';
 
 
+
 const Review = ({ r }) => {
 
     const { name, img, address, title, des, star } = r;
