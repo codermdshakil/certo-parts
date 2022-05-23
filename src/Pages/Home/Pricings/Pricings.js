@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import Spinner from '../../../Shared/Navber/Spinner';
+import Spinner from '../../../Shared/Spinner';
 import './Pricing.css';
 import Pricing from './Pricing/Pricing';
 
