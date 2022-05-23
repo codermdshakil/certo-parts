@@ -9,19 +9,17 @@ const Pricings = () => {
 
 
     const { data: pricings, isLoading } = useQuery('pricings', () =>
-        fetch(`http://localhost:5000/pricing`)
+        fetch(`https://agile-springs-22357.herokuapp.com/pricing`)
             .then(res => res.json())
     )
     if (isLoading) {
         return <Spinner />
     }
 
-    console.log(pricings)
-
 
     return (
         <div className='mt-5'>
-            <div className='text-center mb-6'>
+            <div className='text-center mb-10'>
                 <h2 className='text-4xl font-bold mb-3'> <span className='text-primary'>Pricing</span> and Plans</h2>
                 <div className='flex justify-center items-center'>
                     <h3>Choose your plan <span className='font-bold'>Monthly</span> </h3>

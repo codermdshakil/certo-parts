@@ -6,7 +6,7 @@ import SinglePart from './SinglePart/SinglePart';
 const Parts = () => {
 
     const { data: allParts, isLoading } = useQuery('allparts', () =>
-        fetch(`http://localhost:5000/parts`)
+        fetch(`https://agile-springs-22357.herokuapp.com/parts`)
             .then(res => res.json())
     )
     if (isLoading) {
