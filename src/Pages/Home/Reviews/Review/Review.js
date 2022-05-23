@@ -1,15 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import './Review.css';
 
 
 const Review = ({ r }) => {
 
-    const { name, img, address } = r;
+    const { name, img, address, title, des, star } = r;
 
     return (
-        <article className='p-3 md:w-full w-5/6 mx-auto mb-10' style={{ border: '1px solid gray' }}>
+        <article className='p-5 border-2 border-white hover:border-2 hover:border-yellow-300 rounded-xl custom_shadow md:w-full w-5/6 mx-auto mb-10' >
             <div>
                 <div className='flex justify-evenly'>
                     <div class="avatar">
@@ -18,10 +18,33 @@ const Review = ({ r }) => {
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-lg font-semibold'>{name} <span className='check_marks bg-blue-500 text-white p-1 '><FontAwesomeIcon icon={faCheck} className='check_mark' ></FontAwesomeIcon></span> </h2>
+                        <div className='flex justify-center  items-center'>
+                            <div>
+                                <h2 className='text-lg font-semibold'>{name}</h2>
+                            </div>
+                            <div>
+                                <FontAwesomeIcon className='check_icon' icon={faCheck} />
+                            </div>
+                        </div>
                         <h4 className='text-slate-600'>{address}</h4>
                     </div>
                 </div>
+                <h2 className=' mt-4 text-2xl'>{title}</h2>
+                <div>
+                    <div className='flex my-2'>
+                        <div>
+                            <FontAwesomeIcon className='star text-xl' icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='star text-xl' icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='star text-xl' icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='star text-xl' icon={faStar}></FontAwesomeIcon>
+                            {star > 4.5 ?  <FontAwesomeIcon className='star text-xl mr-1' icon={faStar}></FontAwesomeIcon>:<FontAwesomeIcon className='star text-xl mr-1'  icon={faStarHalfStroke}></FontAwesomeIcon>}
+                        </div>
+                        <div>
+                            <h4>{star}</h4>
+                        </div>
+                    </div>
+                </div>
+                <p>{des}</p>
             </div>
         </article>
     );
