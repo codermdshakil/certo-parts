@@ -31,7 +31,7 @@ const Pricings = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid gap-x-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
+            <div className='grid gap-x-8 lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
                 {
                     pricings.map(p => <Pricing key={p._id} p={p}></Pricing>)
                 }

@@ -78,6 +78,10 @@ input:checked+.slider:before {
     background-color: rgb(0, 221, 80);
 }
 
+.uniqe{
+    border: 2px solid  rgb(0, 221, 80);
+}
+
 @media screen and (max-width:1024px) {
 
     .store_icon_style {

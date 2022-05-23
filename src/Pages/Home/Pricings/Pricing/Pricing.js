@@ -5,10 +5,9 @@ import { faCheck, faStore } from '@fortawesome/free-solid-svg-icons';
 const Pricing = ({ p }) => {
 
     const { name, service1, service2, service3, service4, service5, price } = p;
-
     return (
-        <article className=' md:w-full w-5/6 mx-auto p-5 relative rounded-lg bg-white pricing_box'>
-            <div >
+        <article className={` ${name === 'Advanced' ? 'uniqe':''} border-2 border-white hover:border-2 hover:border-green-500  md:w-full w-5/6 mx-auto p-5 relative rounded-lg bg-white pricing_box`}>
+            <div>
                 <div >
                     <div className="flex justify-center my-4">
                         <div>
