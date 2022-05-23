@@ -42,7 +42,7 @@ const BSummery = () => {
                     </div>
                     <div className='flex justify-center items-center'>
                       <button className='btn md:mr-5 mr-1 text-white' >Request for Quote</button>
-                      <button className='btn btn-secondary text-white'>Contact Us</button>
+                      <button className='btn btn-secondary text-white'> <a href="home#contact">Contact Us</a> </button>
                     </div>
                 </div>
             </div>

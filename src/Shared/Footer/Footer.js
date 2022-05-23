@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faEnvelope, faPhone, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faEnvelope, faPhone, faBell, faCopy } from '@fortawesome/free-solid-svg-icons';
 import fbLogo from '../../Images/socialIcons/fb.png';
 import insLogo from '../../Images/socialIcons/ins.png';
 import twLogo from '../../Images/socialIcons/tw.png';
@@ -19,7 +19,7 @@ const Footer = () => {
     return (
         <div className='footer-section mt-20 py-12' id='footer'>
             <div className='md:px-20 px-10'>
-                <div className='grid gap-10 lg:grid-cols-4 md:grid-cols-2 grid-cols-1'>
+                <div className='grid gap-10 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 footer_content'>
                     <div className=' md:w-full w-11/12'>
                         <h1 className='hero_title mb-1'>Certo <span className='parts_title'>Parts</span>
                         </h1>
@@ -30,6 +30,7 @@ const Footer = () => {
                     </div>
                     <div className='md:w-full w-11/12'>
                         <h2 className='text-2xl font-bold text-white  mb-2'>Quick Links</h2>
+                        <a href='home#banner'>Banner</a>  <br />
                         <a href='home#parts'>Parts</a>  <br />
                         <a href='home#bsummery'>Business Summary</a> <br />
                         <a href='home#reviews'>Reviews</a> <br />
@@ -54,6 +55,9 @@ const Footer = () => {
                             <button className='btn btn-md subscribe w-full mt-4 text-center mx-auto ring-2 ring-white'>Subscribe Now <FontAwesomeIcon className='ml-2' icon={faBell} /></button>
                         </form>
                     </div>
+                </div>
+                <div>
+                    <p className='text-center pt-6'>Copyright <span className='text-primary'> <a target="_blank" href="https://www.linkedin.com/in/codermdshakil/">Md. Shakil Ahmed</a></span> allRights Reserved | <span className='text-secondary'>Programming-hero</span> Learner -2022 </p>
                 </div>
             </div>
         </div>

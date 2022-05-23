@@ -3,6 +3,10 @@
     color: gray;
 }
 
+.footer_content{
+    padding-bottom: 40px;
+    border-bottom: 1px solid gray;
+}
 .hero_title {
     text-transform: uppercase;
     color: white;
