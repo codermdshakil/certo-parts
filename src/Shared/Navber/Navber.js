@@ -27,8 +27,8 @@ const Navber = () => {
         </a></li>
         <li><a href='home#parts'>Products</a></li>
         <div className="dropdown dropdown-hover ">
-            <label tabindex="0" > <li><a href='home#bsummery'>Business Summary <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon></a></li></label>
-            <ul tabindex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-48">
+            <label tabIndex="0" > <li><a href='home#bsummery'>Business Summary <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon></a></li></label>
+            <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-48">
                 <li><a href='home#reviews' className='w-full'>Reviews</a></li>
                 <li><a href='home#pricing' className='w-full'>Pricing</a></li>
                 <li><a href='home#contact' className='w-full'>Contact</a></li>

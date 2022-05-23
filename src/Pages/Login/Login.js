@@ -5,6 +5,8 @@ import Spinner from '../../Shared/Spinner';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
+import googleLogo from '../../Images/google.png';
+
 
 const Login = () => {
 
@@ -24,18 +26,20 @@ const Login = () => {
 
     let loginError;
 
-    if (gLoading || loading) {
+    if (gLoading || loading ) {
         return <Spinner />
     }
 
-    if (error || gError) {
+    if (error || gError ) {
         loginError = error?.message || gError?.message;
     }
 
+    // login in with google 
     const handleSignInWithGoogle = () => {
         signInWithGoogle()
         toast.success('Sign in with Google')
     }
+
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
@@ -43,7 +47,7 @@ const Login = () => {
     }
 
     return (
-        <div className='flex justify-center items-center h-screen'>
+        <div className='flex justify-center items-center lg:h-[120vh] md:h-[80vh] h-screen'>
             <div className=" block card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold py-2 ">Login</h2>
@@ -102,7 +106,7 @@ const Login = () => {
                     <p className='text-sm'>Don't have and Account? <span className='text-secondary'> <Link to='/signup'>Create a new Account</Link> </span></p>
                     <div className="divider">OR</div>
                     <div>
-                        <button onClick={() => handleSignInWithGoogle()} className='btn btn-outline w-full'>Continue with Google</button>
+                        <button onClick={() => handleSignInWithGoogle()} className='btn btn-outline w-full'> <img className='mr-2' src={googleLogo} alt="google_logo" /> Continue with Google </button>
                     </div>
                 </div>
             </div>

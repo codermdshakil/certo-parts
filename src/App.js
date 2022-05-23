@@ -7,6 +7,8 @@ import Home from './Pages/Home/Home';
 import NotFoundPage from './Shared/NotFoundPage';
 import Footer from './Shared/Footer/Footer';
 import Login from './Pages/Login/Login';
+import ResetPassword from './Pages/ResetPassword/ResetPassword';
+import SignUp from './Pages/SignUp/SignUp';
 
 function App() {
   return (
@@ -16,11 +18,13 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='home' element={<Home />}></Route>
         <Route path='login' element={<Login />}></Route>
+        <Route path='signup' element={<SignUp />}></Route>
+        <Route path='resetpassword' element={<ResetPassword />}></Route>
         <Route path='*' element={<NotFoundPage />}></Route>
       </Routes>
       <Footer />
       <ToastContainer />
-    </div>
+    </div >
   );
 }
 

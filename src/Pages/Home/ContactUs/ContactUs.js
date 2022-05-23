@@ -13,7 +13,7 @@ const ContactUs = () => {
 
     return (
         <div>
-            <div id='contact'>
+            <div className='mt-20 mb-24' id='contact'>
                 <div className='mt-10 mb-[-70px]'>
                     <h2 className='text-3xl font-bold text-center '>Contact  <span className='text-primary'> Us</span></h2>
                     <h5 className='text-secondary text-center'>Don't hesilate to Contact Us</h5>
