@@ -79,7 +79,7 @@ input:checked+.slider:before {
 }
 
 .uniqe{
-    border: 2px solid  rgb(0, 221, 80);
+    border: 2px solid  rgb(7, 196, 76);
 }
 
 @media screen and (max-width:1024px) {
