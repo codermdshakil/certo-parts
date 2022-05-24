@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import './Navber.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown , faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
@@ -20,7 +20,7 @@ const Navber = () => {
     }
 
 
-    const menuItemsDesktop = <>
+    const menuItemsDesktop = <div className='mr-6  flex items-center'>
         <li><NavLink to='/home'>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
             Banner
@@ -35,10 +35,11 @@ const Navber = () => {
                 <li><a href='/home#footer' className='w-full'>Footer</a></li>
             </ul>
         </div>
+        <li><NavLink to='/deshboard'> Deshboard</NavLink></li>
         <li><NavLink to='/blogs'>Blogs</NavLink></li>
         {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-secondary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li><NavLink to='/login'>Login</NavLink></li>}
-    </>;
-    
+    </div>;
+
 
     const menuItemsPhone = <>
         <li><NavLink to='/home'>
@@ -52,7 +53,7 @@ const Navber = () => {
         <li><a href='/home#contact' className='w-full'>Contact</a></li>
         <li><a href='/home#footer' className='w-full'>Footer</a></li>
         <li><NavLink to='/blogs'>Blogs</NavLink></li>
-        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-secondary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li><NavLink to='/login'>Login</NavLink></li>}
+        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-secondary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li className="login_btn"><NavLink to='/login'>Login</NavLink></li>}
     </>;
 
 
@@ -76,7 +77,11 @@ const Navber = () => {
                     {menuItemsDesktop}
                 </ul>
             </div>
-            {/* deshboard */}
+            <div className='navbar-end lg:hidden '>
+                <label htmlFor="deshboard_sidebar" className="btn btn-ghost drawer-button lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+            </div>
         </div>
     );
 };

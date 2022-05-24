@@ -28,7 +28,6 @@ const Order = () => {
 
     const handleUserOrder = e => {
         e.preventDefault();
-
         const inputvalue = e.target.quantity.value || parseFloat(minQuantity);
         const userName = e.target.name.value;
         const email = e.target.email.value;
