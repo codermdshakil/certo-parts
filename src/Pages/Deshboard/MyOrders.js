@@ -17,7 +17,6 @@ const MyOrders = () => {
             .then(res => res.json())
     );
 
-    console.log(orders)
 
     if (isLoading || userLoading) {
         return <Spinner />
