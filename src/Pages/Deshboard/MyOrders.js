@@ -10,8 +10,6 @@ const MyOrders = () => {
 
     const [user, userLoading] = useAuthState(auth);
     const [deleteOrder, setDeleteOrder] = useState(null);
-
-
     const { email, displayName } = user;
 
     const { data: orders, isLoading , refetch} = useQuery('myOrders', () =>
