@@ -9,9 +9,9 @@ const Parts = () => {
     const navigate = useNavigate();
 
     const { data: allParts, isLoading } = useQuery('allparts', () =>
-        fetch(`http://localhost:5000/parts`)
+        fetch(`https://secret-reaches-23415.herokuapp.com/parts`)
             .then(res => res.json())
-    )
+    );
     
     if (isLoading) {
         return <Spinner />

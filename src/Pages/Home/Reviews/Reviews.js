@@ -6,7 +6,7 @@ import Review from './Review/Review';
 const Reviews = () => {
 
     const { data: allReviews, isLoading } = useQuery('reviewsAll', () =>
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://secret-reaches-23415.herokuapp.com/reviews`)
             .then(res => res.json())
     )
     if (isLoading) {
