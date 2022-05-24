@@ -57,7 +57,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <p className='text-center pt-6'>Copyright <span className='text-primary'> <a target="_blank" href="https://www.linkedin.com/in/codermdshakil/">Md. Shakil Ahmed</a></span> allRights Reserved | <span className='text-secondary'>Programming-hero</span> Learner -2022 </p>
+                    <p className='text-center pt-6'> &copy; Copyright <span className='text-primary'> <a target="_blank" href="https://www.linkedin.com/in/codermdshakil/" >Md. Shakil Ahmed </a></span> Allrights Reserved | <span className='text-secondary'> <a href="https://www.programming-hero.com/" target="_blank" rel="noopener noreferrer"> Programming-hero </a></span> Learner -2022 </p>
                 </div>
             </div>
         </div>

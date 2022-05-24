@@ -9,6 +9,9 @@ import Footer from './Shared/Footer/Footer';
 import Login from './Pages/Login/Login';
 import ResetPassword from './Pages/ResetPassword/ResetPassword';
 import SignUp from './Pages/SignUp/SignUp';
+import Order from './Pages/Order/Order';
+import RequireAuth from './Shared/RequireAuth';
+
 
 function App() {
   return (
@@ -16,10 +19,15 @@ function App() {
       <Navber />
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='home' element={<Home />}></Route>
-        <Route path='login' element={<Login />}></Route>
-        <Route path='signup' element={<SignUp />}></Route>
-        <Route path='resetpassword' element={<ResetPassword />}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='Order/:productId' element={
+          <RequireAuth>
+            <Order />
+          </RequireAuth>
+        }></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='/resetpassword' element={<ResetPassword />}></Route>
         <Route path='*' element={<NotFoundPage />}></Route>
       </Routes>
       <Footer />

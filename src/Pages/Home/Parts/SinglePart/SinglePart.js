@@ -2,8 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const SinglePart = ({ p }) => {
-    const { name, img, price, des, minQuantity, availableQuantity } = p;
+const SinglePart = ({ p, handleOrder}) => {
+    const { _id ,name, img, price, des, minQuantity, availableQuantity } = p;
 
     return (
         <article className='lg:w-full md:w-full w-10/12   mx-auto border-1 rounded-lg hover:shadow shadow-slate-300 mb-10 shadow-lg border-slate-400 '>
@@ -16,7 +16,7 @@ const SinglePart = ({ p }) => {
                 <h3 className='text-lg font-medium'>Available Quantity : <span className='text-secondary font-bold'>{availableQuantity}</span></h3>
                 <h3 className='text-lg font-medium'>Minimum Order Quantity : <span className='font-bold text-accent'>{minQuantity}</span> </h3>
                 <p className='mb-4  mt-2 text-gray-500 '>{des}</p>
-                <button className='btn text-white btn-secondary w-full'>Purchase Now <FontAwesomeIcon className='ml-2' icon={faArrowRight}></FontAwesomeIcon></button>
+                <button className='btn text-white btn-secondary w-full' onClick={() => handleOrder(_id)} >Order Now <FontAwesomeIcon className='ml-2' icon={faArrowRight}></FontAwesomeIcon></button>
             </div>
         </article>
     );

@@ -9,7 +9,7 @@ const Pricings = () => {
 
 
     const { data: pricings, isLoading } = useQuery('pricings', () =>
-        fetch(`https://agile-springs-22357.herokuapp.com/pricing`)
+        fetch(`http://localhost:5000/pricing`)
             .then(res => res.json())
     )
     if (isLoading) {
