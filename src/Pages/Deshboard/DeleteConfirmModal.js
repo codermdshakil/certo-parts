@@ -9,7 +9,7 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
 
     const handleOrderDelete = id => {
 
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://secret-reaches-23415.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: "DELETE",
             headers: {

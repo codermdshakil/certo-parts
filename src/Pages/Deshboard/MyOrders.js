@@ -13,7 +13,7 @@ const MyOrders = () => {
     const { email, displayName } = user;
 
     const { data: orders, isLoading , refetch} = useQuery('myOrders', () =>
-        fetch(`http://localhost:5000/orders?email=${email}`)
+        fetch(`https://secret-reaches-23415.herokuapp.com/orders?email=${email}`)
             .then(res => res.json())
     );
 
