@@ -9,7 +9,7 @@ const Pricings = () => {
 
 
     const { data: pricings, isLoading } = useQuery('pricings', () =>
-        fetch(`http://localhost:5000/pricing`)
+        fetch(`https://secret-reaches-23415.herokuapp.com/pricing`)
             .then(res => res.json())
     )
     if (isLoading) {
