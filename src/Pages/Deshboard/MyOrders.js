@@ -12,7 +12,7 @@ const MyOrders = () => {
     const [deleteOrder, setdeleteOrder] = useState(null);
     const { email, displayName } = user;
 
-    const { data: orders, isLoading , refetch} = useQuery('myOrders', () =>
+    const { data: orders, isLoading, refetch } = useQuery('myOrders', () =>
         fetch(`https://secret-reaches-23415.herokuapp.com/orders?email=${email}`)
             .then(res => res.json())
     );
@@ -40,7 +40,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <OrderRow
+                            orders?.map((order, index) => <OrderRow
                                 key={order._id}
                                 order={order}
                                 index={index}
@@ -52,7 +52,7 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
-            {deleteOrder && <DeleteConfirmModal  setdeleteOrder={setdeleteOrder} refetch={refetch} deleteOrder={deleteOrder}></DeleteConfirmModal>}
+            {deleteOrder && <DeleteConfirmModal setdeleteOrder={setdeleteOrder} refetch={refetch} deleteOrder={deleteOrder}></DeleteConfirmModal>}
         </div>
     );
 };

@@ -41,9 +41,6 @@ const Order = () => {
         const productPrice = price;
         const productMinQuantity = minQuantity;
         const productAvailabeQuantity = availableQuantity;
-
-        const updateQuantity = availableQuantity - orderQuantity;
-
         const order = { userName, email, phone, address, orderQuantity, productName, productImg, productDes, productPrice, productMinQuantity, productAvailabeQuantity };
 
         if (inputvalue < minQuantity) {

@@ -1,15 +1,29 @@
-import React  from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
+import { useQuery } from 'react-query';
+import Spinner from '../../Shared/Spinner';
+import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookOpen, faBriefcase, faEnvelope, faHome, faLocationDot, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 
 const MyProfile = () => {
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth);
     const { displayName, email } = user;
+
+    const { data: updatedUser, isLoading, refetch } = useQuery('myinformation', () =>
+        fetch(`https://secret-reaches-23415.herokuapp.com/userInfo/${email}`)
+            .then(res => res.json())
+    );
+
+    if (isLoading) {
+        return <Spinner />
+    }
 
     const onSubmit = async data => {
         const userName = data.name;
@@ -21,45 +35,55 @@ const MyProfile = () => {
         const userLinkedinUrl = data.linkedin
 
         const userInformation = { userName, userEmail, userPhone, userEducation, userAddress, userLocation, userLinkedinUrl };
-        console.log(userInformation, 'user info');
 
-
-        const url = `http://localhost:5000/userInfo/${email}`;
+        const url = `https://secret-reaches-23415.herokuapp.com/userInfo/${email}`;
         fetch(url, {
-            method:'PUT',
-            headers:{
-                'content-type':'application/json'
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(userInformation)
+            body: JSON.stringify(userInformation)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.upsertedCount > 0 || data.modifiedCount) {
+                    toast.success('Update successfully!')
+                }
+                refetch()
+                reset();
+            })
 
     }
 
     return (
         <div>
-            <div className='flex'>
-                <div className='w-5/6 border-2 p-3 border-red-600'>
+            <div className=' bg-slate-200 lg:p-16 md:py-10 py-16 md:px-5 rounded-xl grid gap-x-10 md:grid-cols-2 grid-cols-1 mt-5 mb-10 '>
+                <div className='md:w-full w-11/12 mx-auto p-6 md:mb-0 mb-10 rounded-xl custom_shadow  bg-white'>
                     <h1 className='text-2xl font-bold my-3'>My Profile</h1>
                     <div className="my-info">
-                        <h3 className='text-xxl font-semibold text-gray-600'>Full Name</h3>
-                        <h4>{displayName}</h4>
-                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'>Email Address</h3>
-                        <h4>{email}</h4>
-                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'>Phone</h3>
-                        <h4>{email}</h4>
+                        <h3 className='text-xxl font-semibold text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faUser} /> Full Name</h3>
+                        {updatedUser ? <h4>{updatedUser?.userName}</h4> : <h4>{displayName}</h4>}
+                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faEnvelope} /> Email Address</h3>
+                        {updatedUser ? <h4>{updatedUser?.userEmail}</h4> : <h4>{email}</h4>}
+                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faPhone} /> Phone</h3>
+                        {updatedUser ? <h4>{updatedUser?.userPhone}</h4> : 'Please Update!'}
+                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faBookOpen} /> Education</h3>
+                        {updatedUser ? <h4>{updatedUser?.userEducation}</h4> : 'Please Update!'}
+                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faLocationDot} />  Address</h3>
+                        {updatedUser ? <h4>{updatedUser?.userAddress}</h4> : 'please Update!'}
+                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faHome} /> Location</h3>
+                        {updatedUser ? <h4>{updatedUser?.userLocation}</h4> : 'Please Update!'}
+                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faBriefcase} /> Linkedin Profile Url</h3>
+                        {updatedUser ? <h4>{updatedUser?.userLinkedinUrl}</h4> : 'Please Update!'}
                     </div>
                 </div>
-                <div className='w-4/6 p-3 mx-10 border-2 border-green-600 '>
+                <div className='p-6 md:w-full w-11/12  rounded-xl mx-auto custom_shadow bg-white'>
                     <h1 className='text-2xl font-bold my-3'>Update Profile </h1>
                     <div className='update-info '>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control w-full ">
                                 <label className="label">
-                                    <span className="label-text-alt text-lg  mt-[-15px]">Name</span>
+                                    <span className="label-text-alt text-lg  mt-[-15px]">Full Name</span>
                                 </label>
                                 <input
                                     type="text"
@@ -76,11 +100,13 @@ const MyProfile = () => {
                                     {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                                 </label>
                                 <label className="label">
-                                    <span className="label-text-alt text-lg mt-[-15px]">Email</span>
+                                    <span className="label-text-alt text-lg mt-[-15px]">Email <span className='text-sm text-gray-500'>(Email Address cannot be changed)</span></span>
                                 </label>
                                 <input
                                     type="email"
                                     placeholder="Email"
+                                    value={email}
+                                    readOnly
                                     className="input input-bordered w-full  "
                                     {...register("email", {
                                         required: {
