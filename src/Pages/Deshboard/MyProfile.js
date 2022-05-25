@@ -33,7 +33,6 @@ const MyProfile = () => {
         const userAddress = data.address;
         const userLocation = data.location
         const userLinkedinUrl = data.linkedin
-
         const userInformation = { userName, userEmail, userPhone, userEducation, userAddress, userLocation, userLinkedinUrl };
 
         const url = `https://secret-reaches-23415.herokuapp.com/userInfo/${email}`;
@@ -46,7 +45,7 @@ const MyProfile = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.upsertedCount > 0 || data.modifiedCount) {
+                if (data.upsertedCount > 0 || data.modifiedCount > 0) {
                     toast.success('Update successfully!')
                 }
                 refetch()
