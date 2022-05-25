@@ -14,7 +14,7 @@ const Review = ({ r }) => {
             <div>
                 <div className='flex justify-evenly'>
                     <div className="avatar">
-                        <div className="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img src={img} alt="client_picture" />
                         </div>
                     </div>

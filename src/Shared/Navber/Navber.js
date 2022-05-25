@@ -37,7 +37,7 @@ const Navber = () => {
         </div>
         {user?.uid && <li><NavLink to='/deshboard'> Deshboard</NavLink></li>}
         <li><NavLink to='/blogs'>Blogs</NavLink></li>
-        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-secondary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li><NavLink to='/login'>Login</NavLink></li>}
+        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-primary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li><NavLink to='/login'>Login</NavLink></li>}
     </div>;
 
 
@@ -54,7 +54,7 @@ const Navber = () => {
         <li><a href='/home#footer' className='w-full'>Footer</a></li>
         {user?.uid && <li><NavLink to='/deshboard'> Deshboard</NavLink></li>}
         <li><NavLink to='/blogs'>Blogs</NavLink></li>
-        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-secondary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li className="login_btn"><NavLink to='/login'>Login</NavLink></li>}
+        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-primary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li className="login_btn"><NavLink to='/login'>Login</NavLink></li>}
     </>;
 
 

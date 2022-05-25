@@ -9,7 +9,7 @@ import OrderRow from './OrderRow';
 const MyOrders = () => {
 
     const [user, userLoading] = useAuthState(auth);
-    const [deleteOrder, setDeleteOrder] = useState(null);
+    const [deleteOrder, setdeleteOrder] = useState(null);
     const { email, displayName } = user;
 
     const { data: orders, isLoading , refetch} = useQuery('myOrders', () =>
@@ -25,10 +25,10 @@ const MyOrders = () => {
     return (
         <div>
             <div>
-                <h2 className='text-2xl text-center mt-6 mb-5'> <span className='text-3xl font-bold text-green-500'>{displayName} </span> Your all Orders<span className='text-secondary font-bold'>({orders.length})</span></h2>
+                <h2 className='text-2xl text-center mt-6 mb-5'> <span className='text-3xl font-bold text-green-500'>{displayName} </span> Your all Orders<span className='text-primary font-bold'>({orders.length})</span></h2>
             </div>
-            <div class="overflow-x-auto">
-                <table class="table table-zebra  w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-zebra  w-full">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -44,7 +44,7 @@ const MyOrders = () => {
                                 key={order._id}
                                 order={order}
                                 index={index}
-                                setDeleteOrder={setDeleteOrder}
+                                setdeleteOrder={setdeleteOrder}
                             >
                             </OrderRow>
                             )
@@ -52,7 +52,7 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
-            {deleteOrder && <DeleteConfirmModal  setDeleteOrder={setDeleteOrder} refetch={refetch} deleteOrder={deleteOrder}></DeleteConfirmModal>}
+            {deleteOrder && <DeleteConfirmModal  setdeleteOrder={setdeleteOrder} refetch={refetch} deleteOrder={deleteOrder}></DeleteConfirmModal>}
         </div>
     );
 };

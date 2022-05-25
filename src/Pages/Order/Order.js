@@ -27,6 +27,7 @@ const Order = () => {
     const { _id, name, img, des, price, minQuantity, availableQuantity } = product;
 
     const handleUserOrder = e => {
+
         e.preventDefault();
         const inputvalue = e.target.quantity.value || parseFloat(minQuantity);
         const userName = e.target.name.value;
@@ -40,6 +41,8 @@ const Order = () => {
         const productPrice = price;
         const productMinQuantity = minQuantity;
         const productAvailabeQuantity = availableQuantity;
+
+        const updateQuantity = availableQuantity - orderQuantity;
 
         const order = { userName, email, phone, address, orderQuantity, productName, productImg, productDes, productPrice, productMinQuantity, productAvailabeQuantity };
 
@@ -64,9 +67,9 @@ const Order = () => {
                 .then(data => {
                     if (data.acknowledged === true) {
                         toast.success(`Order ${orderQuantity} Product's Successfully`)
+                        e.target.reset();
                     }
                 })
-            e.target.reset();
         }
     }
 
