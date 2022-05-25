@@ -98,12 +98,12 @@ const Login = () => {
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                                 {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
-                            <p className='text-sm mb-2'>Forget Password? <span className='text-secondary'><Link to='/resetpassword'>Reset Password </Link> </span> </p>
+                            <p className='text-sm mb-2'>Forget Password? <span className='text-primary'><Link to='/resetpassword'>Reset Password </Link> </span> </p>
                         </div>
                         <input className='btn text-white w-full' value="Login" type="submit" />
                     </form>
                     <p className='text-center bg-pink-200 rounded-lg text-red-500'>{loginError && loginError.slice(22, 36)}</p>
-                    <p className='text-sm'>Don't have and Account? <span className='text-secondary'> <Link to='/signup'>Create a new Account</Link> </span></p>
+                    <p className='text-sm'>Don't have and Account? <span className='text-primary'> <Link to='/signup'>Create a new Account</Link> </span></p>
                     <div className="divider">OR</div>
                     <div>
                         <button onClick={() => handleSignInWithGoogle()} className='btn btn-outline w-full'> <img className='mr-2' src={googleLogo} alt="google_logo" /> Continue with Google </button>

@@ -161,7 +161,7 @@ const SignUp = () => {
                     </form>
                     <p className='text-center text-sm bg-pink-200 text-red-500 rounded-lg'>{handleError && handleError}</p>
                     <p className='text-center bg-pink-200 text-red-500 rounded-lg'>{userSignUpError && userSignUpError}</p>
-                    <p className="text-sm">Already have an account? <span className='text-secondary'><Link to="/login"> Login</Link></span></p>
+                    <p className="text-sm">Already have an account? <span className='text-primary'><Link to="/login"> Login</Link></span></p>
                     <div className="divider">OR</div>
                     <div>
                         <button onClick={() => signInWithGoogle()} className='btn btn-outline w-full'> <img className='mr-2' src={googleLogo} alt="google_logo" /> Continue with Google</button>

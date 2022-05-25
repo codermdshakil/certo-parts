@@ -40,7 +40,7 @@ const ResetPassword = () => {
                         </div>
                     </div>
 
-                    <h2 className='text-secondary font-bold text-2xl text-center'>Reset Password</h2>
+                    <h2 className='text-primary font-bold text-2xl text-center'>Reset Password</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
