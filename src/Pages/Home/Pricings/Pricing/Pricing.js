@@ -27,7 +27,7 @@ const Pricing = ({ p }) => {
                     <p className='mb-1'> <FontAwesomeIcon className='check_icon_style' icon={faCheck}></FontAwesomeIcon> {service5}</p>
                 </div>
                 <div>
-                    <button className='btn   bg-green-600 text-white border-0 ring-2 ring-secondary mt-10 w-full'>Get Started <FontAwesomeIcon className='ml-2' icon={faArrowRight}></FontAwesomeIcon></button>
+                    <button className='btn   bg-green-600 text-white border-0 ring-2 ring-primary mt-10 w-full'>Get Started <FontAwesomeIcon className='ml-2' icon={faArrowRight}></FontAwesomeIcon></button>
                 </div>
             </div>
         </article>
