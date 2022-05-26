@@ -5,21 +5,31 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import DeleteConfirmModal from './DeleteConfirmModal';
 import OrderRow from './OrderRow';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
 
 const MyOrders = () => {
 
+    const navigate = useNavigate();
     const [user, userLoading] = useAuthState(auth);
     const [deleteOrder, setdeleteOrder] = useState(null);
     const { email, displayName } = user;
 
     const { data: orders, isLoading, refetch } = useQuery('myOrders', () =>
-        fetch(`http://localhost:5000/orders?email=${email}`, {
+        fetch(`https://secret-reaches-23415.herokuapp.com/orders?email=${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    localStorage.removeItem('accessToken')
+                    signOut(auth);
+                   return navigate('/');
+                }
+                return res.json()
+            })
     );
 
     if (isLoading || userLoading) {
@@ -29,7 +39,7 @@ const MyOrders = () => {
     return (
         <div>
             <div>
-                <h2 className='text-2xl text-center mt-6 mb-5'> <span className='text-3xl font-bold text-green-500'>{displayName} </span> Your all Orders<span className='text-primary font-bold'>({orders.length})</span></h2>
+                <h2 className='text-2xl text-center mt-6 mb-5'> <span className='text-3xl font-bold text-green-500'>{displayName} </span> Your all Orders<span className='text-primary font-bold'>({orders?.length})</span></h2>
             </div>
             <div className="overflow-x-auto">
                 <table className="table table-zebra  w-full">

@@ -7,18 +7,33 @@ import Spinner from '../../Shared/Spinner';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faEnvelope, faHome, faLink, faLocationDot, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { signOut } from 'firebase/auth';
+import { useLocation } from 'react-router-dom';
 
 
 
 const MyProfile = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const navigate = useLocation()
     const [user] = useAuthState(auth);
     const { displayName, email } = user;
 
     const { data: updatedUser, isLoading, refetch } = useQuery('myinformation', () =>
-        fetch(`https://secret-reaches-23415.herokuapp.com/userInfo/${email}`)
-            .then(res => res.json())
+        fetch(`https://secret-reaches-23415.herokuapp.com/userInfo/${email}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res => {
+            if (res.status === 401 || res.status === 403) {
+                localStorage.removeItem('accessToken')
+                signOut(auth);
+               return navigate('/');
+            }
+            return res.json()
+        })
     );
 
     if (isLoading) {
