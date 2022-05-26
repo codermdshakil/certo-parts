@@ -10,6 +10,7 @@ const UserRow = ({ user, index, refetch }) => {
 
     const navigate = useNavigate();
 
+
     const handleMakeAdmin = () => {
         fetch(`https://secret-reaches-23415.herokuapp.com/users/admin/${email}`, {
             method: 'PUT',
@@ -19,7 +20,8 @@ const UserRow = ({ user, index, refetch }) => {
         })
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
-                    localStorage.removeItem('accessToken')
+                    toast.error('Failed to make admin');
+                    localStorage.removeItem('accessToken');
                     signOut(auth);
                     return navigate('/');
                 }
@@ -38,7 +40,7 @@ const UserRow = ({ user, index, refetch }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role ? <button onClick={handleMakeAdmin} class="btn btn-xs bg-green-500 border-0 text-white">Already Admin</button> : <button onClick={handleMakeAdmin} class="btn btn-xs">Make Admin</button>}</td>
+            <td>{role ? <button onClick={handleMakeAdmin} className="btn btn-xs bg-green-500 border-0 text-white">Already Admin</button> : <button onClick={handleMakeAdmin} className="btn btn-xs">Make Admin</button>}</td>
             <td><button className='btn btn-error btn-xs'> Remove User</button></td>
         </tr>
     );

@@ -35,9 +35,9 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/resetpassword' element={<ResetPassword />}></Route>
         <Route path='/deshboard' element={<RequireAuth> <Deshboard /></RequireAuth>}>
-          <Route index element={<MyOrders />}></Route>
+          <Route index  element={<MyProfile />}></Route>
+          <Route path='myorders' element={<MyOrders /> }></Route>
           <Route path='addreview' element={<AddReview />}></Route>
-          <Route path='myprofile' element={<MyProfile />}></Route>
           <Route path='makeadmin' element={<MakeAdmin />}></Route>
         </Route>
         <Route path='*' element={<NotFoundPage />}></Route>

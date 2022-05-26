@@ -31,14 +31,10 @@ const MakeAdmin = () => {
         return <Spinner />
     }
 
-    console.log(allusers)
-
-
     return (
-        <div>
-            <h1>All users is here{allusers?.length}</h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+        <div className='lg:px-5 lg:py-7'>
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
