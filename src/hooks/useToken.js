@@ -8,9 +8,7 @@ const useToken = user => {
         const currentUser = { email: email };
 
         if (email) {
-
-            const url = `http://localhost:5000/user/${email}`;
-
+            const url = `https://secret-reaches-23415.herokuapp.com/user/${email}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
