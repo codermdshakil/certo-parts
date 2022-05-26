@@ -17,6 +17,7 @@ import AddReview from './Pages/Deshboard/AddReview';
 import MyProfile from './Pages/Deshboard/MyProfile';
 import MakeAdmin from './Pages/Deshboard/MakeAdmin';
 import Blogs from './Pages/Blogs/Blogs';
+import MyProtfolio from './Pages/MyProtfolio/MyProtfolio';
 
 
 
@@ -36,12 +37,13 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/resetpassword' element={<ResetPassword />}></Route>
         <Route path='/deshboard' element={<RequireAuth> <Deshboard /></RequireAuth>}>
-          <Route index  element={<MyProfile />}></Route>
-          <Route path='myorders' element={<MyOrders /> }></Route>
+          <Route index element={<MyProfile />}></Route>
+          <Route path='myorders' element={<MyOrders />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='makeadmin' element={<MakeAdmin />}></Route>
         </Route>
-        <Route path='blogs' element={<Blogs/>}></Route>
+        <Route path='blogs' element={<Blogs />}></Route>
+        <Route path='myprotfolio' element={<MyProtfolio />}></Route>
         <Route path='*' element={<NotFoundPage />}></Route>
       </Routes>
       <Footer />

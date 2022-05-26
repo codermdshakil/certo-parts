@@ -102,6 +102,8 @@ const MyProfile = () => {
                                 <input
                                     type="text"
                                     placeholder="Name"
+                                    value={displayName}
+                                    readOnly
                                     className="input input-bordered w-full  "
                                     {...register("name", {
                                         required: {
