@@ -13,10 +13,14 @@ const MyOrders = () => {
     const { email, displayName } = user;
 
     const { data: orders, isLoading, refetch } = useQuery('myOrders', () =>
-        fetch(`https://secret-reaches-23415.herokuapp.com/orders?email=${email}`)
+        fetch(`http://localhost:5000/orders?email=${email}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
     );
-
 
     if (isLoading || userLoading) {
         return <Spinner />
