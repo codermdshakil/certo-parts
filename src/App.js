@@ -15,6 +15,7 @@ import Deshboard from './Pages/Deshboard/Deshboard';
 import MyOrders from './Pages/Deshboard/MyOrders';
 import AddReview from './Pages/Deshboard/AddReview';
 import MyProfile from './Pages/Deshboard/MyProfile';
+import MakeAdmin from './Pages/Deshboard/MakeAdmin';
 
 
 
@@ -36,7 +37,8 @@ function App() {
         <Route path='/deshboard' element={<RequireAuth> <Deshboard /></RequireAuth>}>
           <Route index element={<MyOrders />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
-          <Route path='myprofile' element={<MyProfile/>}></Route>
+          <Route path='myprofile' element={<MyProfile />}></Route>
+          <Route path='makeadmin' element={<MakeAdmin />}></Route>
         </Route>
         <Route path='*' element={<NotFoundPage />}></Route>
       </Routes>

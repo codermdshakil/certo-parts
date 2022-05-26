@@ -14,6 +14,7 @@ const Deshboard = () => {
                     <li><NavLink className="mb-2" to='/deshboard'>My Orders</NavLink></li>
                     <li><NavLink className="mb-2" to='/deshboard/addreview'>Add Review</NavLink></li>
                     <li><NavLink className="mb-2" to='/deshboard/myprofile'>My Profile</NavLink></li>
+                    <li><NavLink className="mb-2" to='/deshboard/makeadmin'>Make Admin</NavLink></li>
                 </ul>
             </div>
         </div>

@@ -8,14 +8,14 @@ import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faEnvelope, faHome, faLink, faLocationDot, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const MyProfile = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const navigate = useLocation()
+    const navigate = useNavigate()
     const [user] = useAuthState(auth);
     const { displayName, email } = user;
 
