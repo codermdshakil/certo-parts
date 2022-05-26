@@ -31,6 +31,7 @@ const Deshboard = () => {
                     {admin === true ? "" : <li><NavLink className="mb-2" to='/deshboard/myorders'>My Orders</NavLink></li>}
                     {admin === true ? "" : <li><NavLink className="mb-2" to='/deshboard/addreview'>Add Review</NavLink></li>}
                     {admin === true && <li><NavLink className="mb-2" to='/deshboard/makeadmin'>Make Admin</NavLink></li>}
+                    {admin === true && <li><NavLink className="mb-2" to='/deshboard/addproduct'>Add Product</NavLink></li>}
                 </ul>
             </div>
         </div>

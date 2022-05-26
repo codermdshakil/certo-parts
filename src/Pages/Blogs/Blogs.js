@@ -1,18 +1,6 @@
 import React from 'react';
-
+import codeImg from '../../Images/codeSS.PNG';
 const Blogs = () => {
-
-    const products = [
-
-        { name: 'apple', price: 55, des: 'this is a appple' },
-        { name: 'banana', price: 55, des: 'this is a appple' },
-        { name: 'orange', price: 55, des: 'this is a appple' },
-    ];
-
-
-
-
-
     return (
         <div className='md:px-20 px-10'>
             <div className='lg:w-8/12 md:w-10/12 md:p-10 p-3 my-10 bg-white custom_shadow rounded-xl   mx-auto'>
@@ -54,14 +42,9 @@ const Blogs = () => {
                         <h5 className='text-lg'><span className='text-xl font-bold'>5.</span> You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h5>
                     </div>
                     <div className="collapse-content">
-                        <p><span className='text-lg font-bold'>Ans: </span> Use filter if you want to find all items in an array that meet a specific condition. Use find if you want to check if that at least one item meets a specific condition. <br /><br />
-
-                            const product = [name:'apple', price:80, des:'Most apples are a little sweet and a little tart, but neither characteristic overpowers the other'];
-                            <br />
-                            const searchResult = product.includes('apple'); <br />
-                            console.log(searchResult)
-                            <br /> <br />
+                        <p><span className='text-lg font-bold'>Ans: </span> I am fetching data from the database through JSON. When I want to search for a product then I will filter products using a query to the heading and when I click on the search button. Then It will filter all the data and return to me the matching name products. Use filter if you want to find all items in an array that meet a specific condition. Use find if you want to check if that at least one item meets a specific condition. 
                         </p>
+                        <img src={codeImg} alt="Code_img" />
                     </div>
                 </div>
                 <div tabIndex="5" className=" mb-4 collapse collapse-arrow border border-base-300 bg-base-100   rounded-xl">

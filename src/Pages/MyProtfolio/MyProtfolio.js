@@ -62,9 +62,11 @@ const MyProtfolio = () => {
                                 <li className='font-semibold text-md'><span className='text-primary'>17. </span>Helmet</li>
                                 <li className='font-semibold text-md'><span className='text-primary'>18. </span>DaisyUi</li>
                                 <li className='font-semibold text-md'><span className='text-primary'>19. </span>Rechart</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>20. </span>Json Web Token (JWT)</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>21. </span>Node (Basic concepts clear)</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>22. </span>Express (Basic concepts clear)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>20. </span>Swiper Js</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>21. </span>React Toastify</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>22. </span>Json Web Token (JWT)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>23. </span>Node (Basic concepts clear)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>24. </span>Express (Basic concepts clear)</li>
                             </ul>
                             <div>
                                 <div className='flex items-center my-3'>

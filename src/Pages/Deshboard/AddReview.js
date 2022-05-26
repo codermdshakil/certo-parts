@@ -49,7 +49,6 @@ const AddReview = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-
                         if (data.acknowledged === true) {
                             setReviewLoading(false)
                             toast.success(`${displayName} Added a Review `);

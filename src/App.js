@@ -18,6 +18,7 @@ import MyProfile from './Pages/Deshboard/MyProfile';
 import MakeAdmin from './Pages/Deshboard/MakeAdmin';
 import Blogs from './Pages/Blogs/Blogs';
 import MyProtfolio from './Pages/MyProtfolio/MyProtfolio';
+import AddProduct from './Pages/Deshboard/AddProduct';
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Route path='myorders' element={<MyOrders />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='makeadmin' element={<MakeAdmin />}></Route>
+          <Route path='addproduct' element={<AddProduct/>}></Route>
         </Route>
         <Route path='blogs' element={<Blogs />}></Route>
         <Route path='myprotfolio' element={<MyProtfolio />}></Route>
