@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 import googleLogo from '../../Images/google.png';
+import useToken from '../../hooks/useToken';
 
 
 const Login = () => {
@@ -13,16 +14,17 @@ const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [token] = useToken(user || gUser)
     const navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
 
     useEffect(() => {
-        if (user || gUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate])
+    }, [user, gUser, from, navigate, token])
 
     let loginError;
 

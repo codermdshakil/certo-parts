@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import Spinner from '../../Shared/Spinner';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookOpen, faBriefcase, faEnvelope, faHome, faLocationDot, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faEnvelope, faHome, faLink, faLocationDot, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -72,7 +72,7 @@ const MyProfile = () => {
                         {updatedUser ? <h4>{updatedUser?.userAddress}</h4> : 'please Update!'}
                         <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faHome} /> Location</h3>
                         {updatedUser ? <h4>{updatedUser?.userLocation}</h4> : 'Please Update!'}
-                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faBriefcase} /> Linkedin Profile Url</h3>
+                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={ faLink } /> Linkedin Profile Url</h3>
                         {updatedUser ? <h4>{updatedUser?.userLinkedinUrl}</h4> : 'Please Update!'}
                     </div>
                 </div>

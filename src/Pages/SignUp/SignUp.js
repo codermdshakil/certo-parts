@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Spinner from '../../Shared/Spinner';
 import googleLogo from '../../Images/google.png';
+import useToken from '../../hooks/useToken';
 
 
 const SignUp = () => {
@@ -25,15 +26,18 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
+    const [token] = useToken(user || gUser);
+
 
 
     let userSignUpError;
 
     useEffect(() => {
-        if (user || gUser ) {
+        if (token) {
             navigate('/')
         }
-    }, [user, gUser, navigate])
+    }, [user, gUser, navigate, token]);
+
 
     if (error || gError || uError) {
         userSignUpError = error?.message || gError?.message || uError?.message;

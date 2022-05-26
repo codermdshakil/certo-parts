@@ -19,7 +19,7 @@ const ContactUs = () => {
                     <h5 className='text-primary text-center'>Don't hesilate to Contact Us</h5>
                 </div>
                 <div className='w-full contact_wrapper'>
-                    <div className=' flex items-center justify-center lg:h-screen   md:h-[60vh] h-[70vh]'>
+                    <div className=' flex items-center justify-center lg:h-screen  md:h-[60vh] h-[70vh]'>
                         <form onSubmit={handleContact}>
                             <div className="mt-16 mx-auto border-2 p-5 rounded-xl border-green-500 lg:w-5/12 md:w-5/12 w-5/6  bg-base-100 shadow-xl">
                                 <h2 className='text-primary text-2xl text-center text-semibold mb-3'>Your Information </h2>
