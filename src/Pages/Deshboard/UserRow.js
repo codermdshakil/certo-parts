@@ -11,7 +11,7 @@ const UserRow = ({ user, index, refetch }) => {
     const navigate = useNavigate();
 
     const handleMakeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
+        fetch(`https://secret-reaches-23415.herokuapp.com/users/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
