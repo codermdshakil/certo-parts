@@ -16,6 +16,7 @@ import MyOrders from './Pages/Deshboard/MyOrders';
 import AddReview from './Pages/Deshboard/AddReview';
 import MyProfile from './Pages/Deshboard/MyProfile';
 import MakeAdmin from './Pages/Deshboard/MakeAdmin';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='makeadmin' element={<MakeAdmin />}></Route>
         </Route>
+        <Route path='blogs' element={<Blogs/>}></Route>
         <Route path='*' element={<NotFoundPage />}></Route>
       </Routes>
       <Footer />
