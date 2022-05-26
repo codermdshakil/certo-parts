@@ -43,7 +43,6 @@ const AddProduct = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data, 'data')
                         setProductLoading(false)
                         toast.success(` Successfully ${name} Product added `);
                         reset()
@@ -52,7 +51,6 @@ const AddProduct = () => {
             })
 
 
-        // console.log(data);
     }
 
     return (

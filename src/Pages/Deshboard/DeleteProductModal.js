@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmModal = ({ deleteOrder, setdeleteOrder, refetch }) => {
+const DeleteProductModal = ({ deleteProduct, setdeleteProduct, refetch }) => {
 
-    const { productName } = deleteOrder;
+    const { name } = deleteProduct;
 
-    const handleOrderDelete = id => {
 
-        const url = `https://secret-reaches-23415.herokuapp.com/orders/${id}`;
+    const handleProductDelete = id => {
+        const url = `https://secret-reaches-23415.herokuapp.com/parts/${id}`;
         fetch(url, {
             method: "DELETE",
             headers: {
@@ -19,33 +19,33 @@ const DeleteConfirmModal = ({ deleteOrder, setdeleteOrder, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    setdeleteOrder(null)
+                    setdeleteProduct(null)
                     refetch();
-                    toast.success(`Deleted ${productName} Successfully `);
+                    toast.success(`Deleted ${name} Successfully `);
                 }
                 else {
-                    toast.error(`Failed to delete ${productName} `);
+                    setdeleteProduct(null)
+                    toast.error(`Failed to delete ${name} `);
                 }
             })
-    }
 
+    }
 
     return (
         <div>
             <input type="checkbox" id="delete-Confirm-Modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg text-red-400">Are you sure you want to Delete <span className='font-bold text-lg'>{productName}!!</span></h3>
+                    <h3 className="font-bold text-lg text-red-400">Are you sure you want to Delete <span className='font-bold text-lg'>{name}!!</span></h3>
                     <p className="py-4">If you are delete this item one time it will delete permanently.If you don't want to delete click cancel or If you sure to delete then click delete button!</p>
                     <div className="modal-action">
-                        <button className='btn flex items-center border-0 bg-red-300 text-red-500' onClick={() => handleOrderDelete(deleteOrder?._id)} >DELETE <FontAwesomeIcon className='ml-2' icon={faTrashCan}></FontAwesomeIcon></button>
+                        <button className='btn flex items-center border-0 bg-red-300 text-red-500' onClick={() => handleProductDelete(deleteProduct?._id)} >DELETE <FontAwesomeIcon className='ml-2' icon={faTrashCan}></FontAwesomeIcon></button>
                         <label htmlFor="delete-Confirm-Modal" className="btn">Cancel</label>
                     </div>
                 </div>
             </div>
         </div >
-
     );
 };
 
-export default DeleteConfirmModal;
+export default DeleteProductModal;
