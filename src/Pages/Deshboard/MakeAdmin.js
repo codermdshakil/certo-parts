@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const navigate = useNavigate();
 
     const { data: allusers, isLoading } = useQuery('users', () =>
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://secret-reaches-23415.herokuapp.com/users`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
