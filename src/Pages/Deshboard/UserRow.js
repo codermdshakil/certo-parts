@@ -6,7 +6,9 @@ import { toast } from 'react-toastify';
 
 const UserRow = ({ user, index, refetch }) => {
 
-    const { email, role } = user;
+    const { email , role } = user;
+
+    console.log(user, 'make admin')
 
     const navigate = useNavigate();
 
@@ -38,7 +40,7 @@ const UserRow = ({ user, index, refetch }) => {
     return (
         <tr>
             <th>{index + 1}</th>
-            <td>{email}</td>
+            <td className='font-medium '>{email}</td>
             <td>{role ? <button onClick={handleMakeAdmin} className="btn btn-xs bg-green-500 border-0 text-white">Already Admin</button> : <button onClick={handleMakeAdmin} className="btn btn-xs">Make Admin</button>}</td>
             <td><button className='btn btn-error btn-xs'> Remove User</button></td>
         </tr>

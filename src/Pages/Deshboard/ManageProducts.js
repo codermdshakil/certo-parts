@@ -13,24 +13,22 @@ const ManageProducts = () => {
             .then(res => res.json())
     );
 
-
-
     if (isLoading) {
         return <Spinner />
     }
 
-
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div class="overflow-x-auto bg-slate-200 rounded-xl mb-5">
+                <table class="table table-zebra lg:w-11/12  md:mx-10 my-10 mx-auto custom_shadow mb-10 rounded-xl w-full ">
                     <thead>
                         <tr>
                             <th>No.</th>
                             <th>Photo</th>
                             <th>Name</th>
                             <th>Price</th>
-                            <th>Action</th>
+                            <th>Available Quantity</th>
+                            <th>Delete Product</th>
                         </tr>
                     </thead>
                     <tbody>

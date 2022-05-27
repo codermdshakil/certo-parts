@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import './Navber.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faRightFromBracket , faEllipsisVertical} from '@fortawesome/free-solid-svg-icons';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
@@ -36,7 +36,7 @@ const Navber = () => {
                 <li><a href='/home#footer' className='w-full'>Footer</a></li>
             </ul>
         </div>
-        {user?.uid && <li><NavLink to='/deshboard'> Deshboard</NavLink></li>}
+        {user?.uid && <li><NavLink to='/deshboard'> <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon> Deshboard</NavLink></li>}
         <li><NavLink to='/blogs'>Blogs</NavLink></li>
         <li><NavLink to='/myprotfolio'>My Protfolio</NavLink></li>
         {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-primary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li><NavLink to='/login'>Login</NavLink></li>}

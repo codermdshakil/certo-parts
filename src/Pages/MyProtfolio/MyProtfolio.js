@@ -12,7 +12,7 @@ const MyProtfolio = () => {
     return (
         <div className='md:px-20 px-10'>
             <div className='lg:w-8/12 md:w-10/12 md:p-5 p-3 my-10 bg-white custom_shadow rounded-xl   mx-auto'>
-                <h2 className='text-center font-semibold md:text-3xl text-lg pt-2 '> <span className='text-secondary'>Welcome </span> <span className='text-primary'> to My  Protfolio</span></h2>
+                <h2 className='text-center font-semibold md:text-3xl text-lg pt-2 '> <span className='text-green-500'>Welcome </span> to My <span className='text-primary'> Protfolio</span></h2>
                 <div>
                     <img src={myImg} className=" lg:w-5/12  md:w-1/2 w-1/2 mx-auto  ring ring-primary ring-offset-base-100 ring-offset-2  rounded-full  mt-6 mb-3" alt="My_Picture" />
                     <div className='my_infomation md:p-5 p-2'>

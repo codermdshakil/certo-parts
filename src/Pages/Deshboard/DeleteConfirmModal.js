@@ -1,11 +1,16 @@
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const DeleteConfirmModal = ({ deleteOrder, setdeleteorder, refetch }) => {
 
     const { productName } = deleteOrder;
+    console.log(deleteOrder)
+    const navigate = useNavigate();
 
     const handleOrderDelete = id => {
 
@@ -13,10 +18,18 @@ const DeleteConfirmModal = ({ deleteOrder, setdeleteorder, refetch }) => {
         fetch(url, {
             method: "DELETE",
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    localStorage.removeItem('accessToken')
+                    signOut(auth);
+                    return navigate('/');
+                }
+                return res.json();
+            })
             .then(data => {
                 if (data.deletedCount > 0) {
                     setdeleteorder(null)

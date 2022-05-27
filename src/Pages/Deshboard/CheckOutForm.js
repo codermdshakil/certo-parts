@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { signOut } from 'firebase/auth';
+import auth from '../../firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 
 const CheckOutForm = ({ singleOrder }) => {
 
+    const navigate = useNavigate();
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
     const [cardSuccess, setCardSuccess] = useState('');
-    const [tranjectionId, settranjectionId] = useState('');
+    const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
+    const [processing, setProcessing] = useState(false);
 
 
-    
-
-
-    const { productPrice, userName, email  } = singleOrder;
+    const { _id, productPrice, userName, email } = singleOrder;
 
     useEffect(() => {
 
@@ -27,18 +29,21 @@ const CheckOutForm = ({ singleOrder }) => {
             },
             body: JSON.stringify({ productPrice })
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    localStorage.removeItem('accessToken')
+                    signOut(auth);
+                    return navigate('/');
+                }
+                return res.json();
+            })
             .then(data => {
-
                 if (data?.clientSecret) {
                     setClientSecret(data.clientSecret)
                 }
-                console.log(data, 'from backend')
             })
 
     }, [productPrice])
-
-    
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -51,7 +56,7 @@ const CheckOutForm = ({ singleOrder }) => {
             return;
         }
 
-     
+
 
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
@@ -61,6 +66,7 @@ const CheckOutForm = ({ singleOrder }) => {
 
         setCardError(error?.message || '')
         setCardSuccess('')
+        setProcessing(true);
 
         // confirm card payment 
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
@@ -78,13 +84,37 @@ const CheckOutForm = ({ singleOrder }) => {
 
 
         if (intentError) {
-            setCardError(intentError?.message)
+            setCardError(intentError?.message);
+            setProcessing(false)
         }
         else {
             setCardError('');
-            settranjectionId(paymentIntent?.id)
+            setTransactionId(paymentIntent?.id)
             console.log(paymentIntent, 'paymentIntent')
-            setCardSuccess('Congrats! Your payment is Complete.')
+            setCardSuccess('Congrats! Your payment is Complete.');
+
+
+            const payment = {
+                order: _id,
+                transactionId: paymentIntent?.id
+            }
+
+            // update to server 
+            fetch(`https://secret-reaches-23415.herokuapp.com/orders/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data, 'patch')
+                    setProcessing(false)
+                })
+
+
         }
 
     }
@@ -108,14 +138,14 @@ const CheckOutForm = ({ singleOrder }) => {
                         },
                     }}
                 />
-                <button className='btn btn-sm  mt-3 bg-green-500 border-0 text-white' type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn btn-sm  mt-3 bg-green-500 border-0 text-white' type="submit" disabled={!stripe || !clientSecret || cardSuccess}>
                     Pay
                 </button>
             </form>
             {cardError && <p className='text-red-500 mt-3'>{cardError}</p>}
             {cardSuccess && <div>
                 <p className='text-green-500'>{cardSuccess}</p>
-                <p>Your Tranjection Id : <span className='text-indigo-600 '>{tranjectionId}</span></p>
+                <p>Your Transection Id : <span className='text-indigo-600 '>{transactionId}</span></p>
             </div>}
         </>
     );

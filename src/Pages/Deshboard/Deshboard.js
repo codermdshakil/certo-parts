@@ -4,6 +4,8 @@ import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import useAdmin from '../../hooks/useAdmin';
 import Spinner from '../../Shared/Spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserEdit, faShoppingCart, faPlus, faUserPlus, faListCheck , faBarsProgress} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -27,13 +29,13 @@ const Deshboard = () => {
             <div className="drawer-side">
                 <label htmlFor="deshboard_sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-72 bg-base-100 text-base-content">
-                    <li><NavLink className="mb-2" to='/deshboard'>My Profile</NavLink></li>
-                    {admin === true ? "" : <li><NavLink className="mb-2" to='/deshboard/myorders'>My Orders</NavLink></li>}
-                    {admin === true ? "" : <li><NavLink className="mb-2" to='/deshboard/addreview'>Add Review</NavLink></li>}
-                    {admin === true && <li><NavLink className="mb-2" to='/deshboard/makeadmin'>Make Admin</NavLink></li>}
-                    {admin === true && <li><NavLink className="mb-2" to='/deshboard/addproduct'>Add Product</NavLink></li>}
-                    {admin === true && <li><NavLink className="mb-2" to='/deshboard/manageproduct'>Manage Product's</NavLink></li>}
-                    {admin === true && <li><NavLink className="mb-2" to='/deshboard/manageorders'>Manage Order's</NavLink></li>}
+                    <li><NavLink className="mb-2 font-medium" to='/deshboard'><FontAwesomeIcon icon={faUserEdit}></FontAwesomeIcon> My Profile</NavLink></li>
+                    {admin === true ? "" : <li><NavLink className="mb-2  font-medium" to='/deshboard/myorders'><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> Orders</NavLink></li>}
+                    {admin === true ? "" : <li><NavLink className="mb-2 font-medium" to='/deshboard/addreview'> <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>Add Review</NavLink></li>}
+                    {admin === true && <li><NavLink className="mb-2 font-medium" to='/deshboard/makeadmin'><FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon>Make Admin</NavLink></li>}
+                    {admin === true && <li><NavLink className="mb-2 font-medium" to='/deshboard/addproduct'> <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon> Add Product </NavLink></li>}
+                    {admin === true && <li><NavLink className="mb-2 font-medium" to='/deshboard/manageorders'><FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>Manage Order's</NavLink></li>}
+                    {admin === true && <li><NavLink className="mb-2 font-medium" to='/deshboard/manageproduct'> <FontAwesomeIcon icon={faBarsProgress}></FontAwesomeIcon>Manage Product's</NavLink></li>}
                 </ul>
             </div>
         </div>

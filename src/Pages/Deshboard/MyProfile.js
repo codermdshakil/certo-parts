@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import Spinner from '../../Shared/Spinner';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookOpen, faEnvelope, faHome, faLink, faLocationDot, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faEnvelope, faHome, faLink, faLocationDot, faPaperPlane, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -66,7 +66,6 @@ const MyProfile = () => {
                 refetch()
                 reset();
             })
-
     }
 
     return (
@@ -97,7 +96,7 @@ const MyProfile = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control w-full ">
                                 <label className="label">
-                                    <span className="label-text-alt text-lg  mt-[-15px]">Full Name</span>
+                                    <span className="label-text-alt text-lg  mt-[-15px] font-medium">Full Name <span className='text-sm text-gray-500'>( Full Name cannot be changed)</span> </span>
                                 </label>
                                 <input
                                     type="text"
@@ -116,7 +115,7 @@ const MyProfile = () => {
                                     {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                                 </label>
                                 <label className="label">
-                                    <span className="label-text-alt text-lg mt-[-15px]">Email <span className='text-sm text-gray-500'>(Email Address cannot be changed)</span></span>
+                                    <span className="label-text-alt text-lg mt-[-15px] font-medium">Email <span className='text-sm text-gray-500'>(Email Address cannot be changed)</span></span>
                                 </label>
                                 <input
                                     type="email"
@@ -141,7 +140,7 @@ const MyProfile = () => {
                                 </label>
 
                                 <label className="label">
-                                    <span className="label-text-alt text-lg mt-[-15px]">Phone</span>
+                                    <span className="label-text-alt text-lg mt-[-15px] font-medium">Phone</span>
                                 </label>
                                 <input
                                     type="number"
@@ -158,7 +157,7 @@ const MyProfile = () => {
                                     {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
                                 </label>
                                 <label className="label">
-                                    <span className="label-text-alt text-lg mt-[-15px]">Education <span className='text-sm text-gray-600'>(Your Education level)</span></span>
+                                    <span className="label-text-alt text-lg mt-[-15px] font-medium">Education <span className='text-sm text-gray-600'>(Your Education level)</span></span>
                                 </label>
                                 <input
                                     type="text"
@@ -176,7 +175,7 @@ const MyProfile = () => {
                                 </label>
 
                                 <label className="label">
-                                    <span className="label-text-alt text-lg mt-[-15px]">Linkedin Profile <span className='text-sm text-gray-600'>URL</span></span>
+                                    <span className="label-text-alt text-lg mt-[-15px] font-medium">Linkedin Profile <span className='text-sm text-gray-600'>URL</span></span>
                                 </label>
                                 <input
                                     type="url"
@@ -196,7 +195,7 @@ const MyProfile = () => {
 
 
                                 <label className="label">
-                                    <span className="label-text-alt text-lg mt-[-15px]">Address</span>
+                                    <span className="label-text-alt text-lg mt-[-15px] font-medium">Address</span>
                                 </label>
                                 <input
                                     type="text"
@@ -215,7 +214,7 @@ const MyProfile = () => {
 
 
                                 <label className="label">
-                                    <span className="label-text-alt text-lg mt-[-15px]">Location <span className='text-sm text-gray-600'>(City/District)</span></span>
+                                    <span className="label-text-alt text-lg mt-[-15px] font-medium">Location <span className='text-sm text-gray-600'>(City/District)</span></span>
                                 </label>
                                 <input
                                     type="text"
@@ -231,11 +230,8 @@ const MyProfile = () => {
                                 <label className="label">
                                     {errors.location?.type === 'required' && <span className="label-text-alt text-red-500">{errors.location.message}</span>}
                                 </label>
-
-
-
                             </div>
-                            <button className='btn w-full text-white'>Update Profile</button>
+                            <button type='submit' className='btn w-full text-white'>Update Profile <FontAwesomeIcon className='ml-2' icon={ faPaperPlane } /> </button>
                         </form>
                     </div>
                 </div>

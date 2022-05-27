@@ -36,27 +36,25 @@ const Payment = () => {
         return <Spinner />
     }
 
-
-    console.log(singleOrder, 'payment');
-
     const { productName, productPrice, orderQuantity, userName, productImg, email, address, phone, productDes } = singleOrder;
 
     return (
         <div>
             <div class="card md:w-1/2 w-5/6 my-10 mx-auto   bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <p>Hello, <span className='font-bold text-green-500'>{userName}</span></p>
-                    <img src={productImg} alt="ProductImg" />
+                    <img src={productImg} className="w-5/6 mx-auto p-3 mb-4" alt="ProductImg" />
+                    <p className='text-xl  font-bold text-indigo-700'>Hello!, <span className='font-bold text-green-500'>{userName}</span></p>
                     <h2 class="card-title">Pay For <span className='text-primary'>{productName}</span></h2>
-                    <h3 className='text-lg font-medium'> <span className='text-green-600'>Product Price </span>: ${productPrice}</h3>
+                    <h3 className='text-lg font-medium'>Product Price : <span className='text-yellow-500 font-bold'>${productPrice}</span></h3>
                     <h4 className='text-lg font-medium'>Your orderd Products: <span className='font-bold'>{orderQuantity}</span></h4>
-                    <h4 className='text-lg font-medium'>Your Phone: {phone}</h4>
-                    <h3 className='text-lg font-medium'>Your Email : <span className='text-yellow-500'>{email}</span> </h3>
-                    <h3 className='text-lg font-medium'>Your Address : <span className='text-blue-600'>{address}</span> </h3>
-                    <p>{productDes}</p>
+                    <h4 className='text-lg font-medium'>Your Phone: <span className='text-teal-500'>{phone}</span></h4>
+                    <h3 className='text-lg font-medium'>Your Email : <span className='text-green-500'>{email}</span> </h3>
+                    <h3 className='text-lg font-medium'>Your Address : <span className='text-cyan-600'>{address}</span> </h3>
+                    <p className='text-gray-600'>{productDes}</p>
                 </div>
             </div>
             <div class="card  md:w-1/2 w-5/6 my-10 mx-auto flex-shrink-0  shadow-2xl bg-base-100">
+                <h3 className='text-xl  px-8 text-indigo-700 font-bold'>Payment Information</h3>
                 <div class="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckOutForm singleOrder={singleOrder} />

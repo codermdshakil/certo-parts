@@ -4,6 +4,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Spinner from '../../Shared/Spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const AddReview = () => {
 
@@ -59,14 +61,14 @@ const AddReview = () => {
     }
 
     return (
-        <div>
+        <div className='bg-slate-200 rounded-xl md:p-10 p-2'>
             <div className="card mx-auto lg:w-5/12 md:w-6/12 w-11/12 my-10  bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className=" text-teal-500 text-2xl font-bold text-center py-4">Review Information</h2>
+                    <h2 className=" text-green-500 text-2xl font-bold text-center py-4">Review Information</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full ">
                             <label className="label">
-                                <span className="label-text-alt text-lg  mt-[-15px]">Name</span>
+                                <span className="label-text-alt text-lg  mt-[-15px] font-medium">Name</span>
                             </label>
                             <input
                                 type="text"
@@ -86,7 +88,7 @@ const AddReview = () => {
                             </label>
 
                             <label className="label">
-                                <span className="label-text-alt text-lg  mt-[-15px]">Photo</span>
+                                <span className="label-text-alt text-lg  mt-[-15px] font-medium">Image</span>
                             </label>
                             <input
                                 type="file"
@@ -105,7 +107,7 @@ const AddReview = () => {
 
 
                             <label className="label">
-                                <span className="label-text-alt text-lg mt-[-15px]">Address</span>
+                                <span className="label-text-alt text-lg mt-[-15px] font-medium">Address</span>
                             </label>
                             <input
                                 type="text"
@@ -124,7 +126,7 @@ const AddReview = () => {
 
 
                             <label className="label">
-                                <span className="label-text-alt text-lg mt-[-15px]">Rating</span>
+                                <span className="label-text-alt text-lg mt-[-15px] font-medium">Rating</span>
                             </label>
                             <input
                                 type="number"
@@ -142,7 +144,7 @@ const AddReview = () => {
                             </label>
 
                             <label className="label">
-                                <span className="label-text-alt text-lg mt-[-15px]">Title</span>
+                                <span className="label-text-alt text-lg mt-[-15px] font-medium">Title</span>
                             </label>
                             <input
                                 type="text"
@@ -160,7 +162,7 @@ const AddReview = () => {
                             </label>
 
                             <label className="label">
-                                <span className="label-text-alt text-lg mt-[-15px]">Description</span>
+                                <span className="label-text-alt text-lg mt-[-15px] font-medium">Description</span>
                             </label>
 
 
@@ -179,7 +181,7 @@ const AddReview = () => {
                                 {errors.des?.type === 'required' && <span className="label-text-alt text-red-500">{errors.des.message}</span>}
                             </label>
                         </div>
-                        <input className='btn text-white w-full' value="Add Review" type="submit" />
+                        <button type='submit' className='w-full btn text-white '>Add Review <FontAwesomeIcon className='ml-2' icon={faPaperPlane} /> </button>
                     </form>
                 </div>
             </div>
