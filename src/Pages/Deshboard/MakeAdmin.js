@@ -1,19 +1,20 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Spinner from '../../Shared/Spinner';
+import DeleteUserModal from './DeleteUserModal';
 import UserRow from './UserRow';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserEdit} from '@fortawesome/free-solid-svg-icons';
+
 
 
 const MakeAdmin = () => {
 
     const navigate = useNavigate();
+    const [deleteUser, setDeleteUser] = useState(null);
 
-    const { data: allusers, isLoading , refetch} = useQuery('users', () =>
+    const { data: allusers, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://secret-reaches-23415.herokuapp.com/users`, {
             method: 'GET',
             headers: {
@@ -44,22 +45,23 @@ const MakeAdmin = () => {
                             <th></th>
                             <th>User Email</th>
                             <th>Make Admin</th>
-                            <th>Remove User</th>
+                            <th>Delete User</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             allusers?.map((user, index) => <UserRow
-                            key={user?._id}
-                            user={user}
-                            index={index}
-                            refetch={refetch}
+                                key={user?._id}
+                                user={user}
+                                index={index}
+                                refetch={refetch}
+                                setDeleteUser={setDeleteUser}
                             ></UserRow>)
-                        }    
+                        }
                     </tbody>
                 </table>
             </div>
-
+            {deleteUser && <DeleteUserModal setDeleteUser={setDeleteUser} deleteUser={deleteUser} refetch={refetch}></DeleteUserModal>}
         </div>
     );
 };

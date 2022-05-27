@@ -3,10 +3,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-const UserRow = ({ user, index, refetch }) => {
+const UserRow = ({ user, index, refetch, setDeleteUser }) => {
 
-    const { email , role } = user;
+    const { email, role } = user;
 
 
     const navigate = useNavigate();
@@ -41,7 +43,12 @@ const UserRow = ({ user, index, refetch }) => {
             <th>{index + 1}</th>
             <td className='font-medium '>{email}</td>
             <td>{role ? <button onClick={handleMakeAdmin} className="btn btn-xs bg-green-500 border-0 text-white">Already Admin</button> : <button onClick={handleMakeAdmin} className="btn btn-xs">Make Admin</button>}</td>
-            <td><button className='btn btn-error btn-xs'> Remove User</button></td>
+            <td>
+                <button onClick={() => setDeleteUser(user)}>
+                    <label setDeleteUser={setDeleteUser} htmlFor="delete-user-Modal" className="btn btn-sm border-0 bg-red-300 text-red-500  modal-button"><FontAwesomeIcon icon={faTrashCan} />
+                    </label>
+                </button>
+            </td>
         </tr>
     );
 };
