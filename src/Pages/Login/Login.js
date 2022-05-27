@@ -50,13 +50,13 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center lg:h-[120vh] md:h-[80vh] h-screen'>
-            <div className=" block card w-96 bg-base-100 shadow-xl">
+            <div className=" block card md:w-96 w-10/12 mx-auto bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold py-2 ">Login</h2>
+                    <h2 className="text-center text-3xl font-semibold py-2 ">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-lg font-medium">Email</span>
                             </label>
                             <input
                                 type="email"
@@ -80,7 +80,7 @@ const Login = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-lg font-medium">Password</span>
                             </label>
                             <input
                                 type="password"

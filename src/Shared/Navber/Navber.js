@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import './Navber.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faRightFromBracket , faEllipsisVertical} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faRightFromBracket , faEllipsisVertical, faSignIn} from '@fortawesome/free-solid-svg-icons';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
@@ -39,7 +39,7 @@ const Navber = () => {
         {user?.uid && <li><NavLink to='/deshboard'> <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon> Deshboard</NavLink></li>}
         <li><NavLink to='/blogs'>Blogs</NavLink></li>
         <li><NavLink to='/myprotfolio'>My Protfolio</NavLink></li>
-        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-primary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li><NavLink to='/login'>Login</NavLink></li>}
+        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-primary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li><NavLink to='/login'>Login <FontAwesomeIcon className='ml-[-5px]' icon={faSignIn} /> </NavLink></li>}
     </div>;
 
 
@@ -54,10 +54,10 @@ const Navber = () => {
         <li className='mb-2'><a href='/home#pricing' className='w-full'>Pricing</a></li>
         <li className='mb-2'><a href='/home#contact' className='w-full'>Contact</a></li>
         <li className='mb-2'><a href='/home#footer' className='w-full'>Footer</a></li>
-        {user?.uid && <li className='mb-2'><NavLink to='/deshboard'> Deshboard</NavLink></li>}
+        {user?.uid && <li className='mb-2'><NavLink to='/deshboard'><FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon> Deshboard</NavLink></li>}
         <li className='mb-2'><NavLink to='/blogs'>Blogs</NavLink></li>
         <li className='mb-2'><NavLink to='/myprotfolio'>My Protfolio</NavLink></li>
-        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-primary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li className="login_btn"><NavLink to='/login'>Login</NavLink></li>}
+        {user?.uid ? <button onClick={handleSignOut} className='btn text-white btn-primary'>LogOut <FontAwesomeIcon className='ml-2' icon={faRightFromBracket}></FontAwesomeIcon> </button> : <li className="login_btn"><NavLink to='/login'>Login <FontAwesomeIcon className='ml-[-5px]' icon={faSignIn} /> </NavLink></li>}
     </>;
 
 

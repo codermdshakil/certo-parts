@@ -65,13 +65,13 @@ const SignUp = () => {
 
     return (
         <div className='flex items-center justify-center lg:h-[120vh] md:h-[80vh] h-screen '>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card  md:w-96 w-10/12 mx-auto bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl">Sign In</h2>
+                    <h2 className="text-center text-3xl font-semibold ">Sign In</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text-alt text-lg  mt-[-15px]">Name</span>
+                                <span className="label-text-alt text-lg  mt-[-15px] font-medium">Name</span>
                             </label>
                             <input
                                 type="text"
@@ -90,7 +90,7 @@ const SignUp = () => {
 
 
                             <label className="label">
-                                <span className="label-text-alt text-lg mt-[-15px]">Email</span>
+                                <span className="label-text-alt text-lg mt-[-15px] font-medium">Email</span>
                             </label>
                             <input
                                 type="email"
@@ -114,7 +114,7 @@ const SignUp = () => {
 
 
                             <label className="label">
-                                <span className="label-text-alt text-lg mt-[-15px]">Password</span>
+                                <span className="label-text-alt text-lg mt-[-15px] font-medium">Password</span>
                             </label>
                             <input
                                 type="password"
@@ -137,7 +137,7 @@ const SignUp = () => {
                             </label>
 
                             <label className="label">
-                                <span className="label-text-alt text-lg mt-[-15px]">Confirm Password</span>
+                                <span className="label-text-alt text-lg mt-[-15px] font-medium">Confirm Password</span>
                             </label>
 
 

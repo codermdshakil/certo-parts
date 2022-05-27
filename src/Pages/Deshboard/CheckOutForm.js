@@ -43,7 +43,7 @@ const CheckOutForm = ({ singleOrder }) => {
                 }
             })
 
-    }, [productPrice])
+    }, [productPrice, navigate])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -90,7 +90,6 @@ const CheckOutForm = ({ singleOrder }) => {
         else {
             setCardError('');
             setTransactionId(paymentIntent?.id)
-            console.log(paymentIntent, 'paymentIntent')
             setCardSuccess('Congrats! Your payment is Complete.');
 
 
@@ -110,11 +109,8 @@ const CheckOutForm = ({ singleOrder }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data, 'patch')
                     setProcessing(false)
                 })
-
-
         }
 
     }

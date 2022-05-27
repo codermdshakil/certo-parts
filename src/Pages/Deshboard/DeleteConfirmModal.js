@@ -9,7 +9,6 @@ import auth from '../../firebase.init';
 const DeleteConfirmModal = ({ deleteOrder, setdeleteorder, refetch }) => {
 
     const { productName } = deleteOrder;
-    console.log(deleteOrder)
     const navigate = useNavigate();
 
     const handleOrderDelete = id => {

@@ -8,7 +8,6 @@ const UserRow = ({ user, index, refetch }) => {
 
     const { email , role } = user;
 
-    console.log(user, 'make admin')
 
     const navigate = useNavigate();
 
