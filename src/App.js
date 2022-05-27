@@ -20,6 +20,8 @@ import Blogs from './Pages/Blogs/Blogs';
 import MyProtfolio from './Pages/MyProtfolio/MyProtfolio';
 import AddProduct from './Pages/Deshboard/AddProduct';
 import ManageProducts from './Pages/Deshboard/ManageProducts';
+import ManageAllOrders from './Pages/Deshboard/ManageAllOrders';
+import Payment from './Pages/Deshboard/Payment';
 
 
 
@@ -40,11 +42,13 @@ function App() {
         <Route path='/resetpassword' element={<ResetPassword />}></Route>
         <Route path='/deshboard' element={<RequireAuth> <Deshboard /></RequireAuth>}>
           <Route index element={<MyProfile />}></Route>
-          <Route path='myorders' element={<MyOrders />}></Route>
-          <Route path='addreview' element={<AddReview />}></Route>
-          <Route path='makeadmin' element={<MakeAdmin />}></Route>
-          <Route path='addproduct' element={<AddProduct />}></Route>
-          <Route path='manageproduct' element={<ManageProducts />}></Route>
+          <Route path='myorders' element={<RequireAuth> <MyOrders /></RequireAuth>}></Route>
+          <Route path='addreview' element={<RequireAuth><AddReview /></RequireAuth>}></Route>
+          <Route path='makeadmin' element={<RequireAuth> <MakeAdmin /></RequireAuth>}></Route>
+          <Route path='addproduct' element={<RequireAuth><AddProduct /></RequireAuth>}></Route>
+          <Route path='manageproduct' element={<RequireAuth><ManageProducts /></RequireAuth>}></Route>
+          <Route path='manageorders' element={<RequireAuth><ManageAllOrders /></RequireAuth>}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
         </Route>
         <Route path='blogs' element={<Blogs />}></Route>
         <Route path='myprotfolio' element={<MyProtfolio />}></Route>

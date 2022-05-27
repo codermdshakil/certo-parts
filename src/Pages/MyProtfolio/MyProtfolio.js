@@ -12,9 +12,9 @@ const MyProtfolio = () => {
     return (
         <div className='md:px-20 px-10'>
             <div className='lg:w-8/12 md:w-10/12 md:p-5 p-3 my-10 bg-white custom_shadow rounded-xl   mx-auto'>
-                <h2 className='text-center font-semibold md:text-2xl text-lg pt-2 '> <span className='text-secondary'>Welcome </span> <span className='text-primary'> to My  Protfolio</span></h2>
+                <h2 className='text-center font-semibold md:text-3xl text-lg pt-2 '> <span className='text-secondary'>Welcome </span> <span className='text-primary'> to My  Protfolio</span></h2>
                 <div>
-                    <img src={myImg} className="w-1/2 mx-auto  rounded-full md:p-12 p-2 mb-2" alt="My_Picture" />
+                    <img src={myImg} className=" lg:w-5/12  md:w-1/2 w-1/2 mx-auto  ring ring-primary ring-offset-base-100 ring-offset-2  rounded-full  mt-6 mb-3" alt="My_Picture" />
                     <div className='my_infomation md:p-5 p-2'>
                         <h2 className='text-xl'> <FontAwesomeIcon className='text-primary' icon={faUser} /> Full Name</h2>
                         <h4 className='mb-2 text-gray-600'>Md. Shakil Ahmed</h4>
@@ -63,10 +63,11 @@ const MyProtfolio = () => {
                                 <li className='font-semibold text-md'><span className='text-primary'>18. </span>DaisyUi</li>
                                 <li className='font-semibold text-md'><span className='text-primary'>19. </span>Rechart</li>
                                 <li className='font-semibold text-md'><span className='text-primary'>20. </span>Swiper Js</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>21. </span>React Toastify</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>22. </span>Json Web Token (JWT)</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>23. </span>Node (Basic concepts clear)</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>24. </span>Express (Basic concepts clear)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>21. </span>Stripe (For Payment)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>22. </span>React Toastify</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>23. </span>Json Web Token (JWT)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>24. </span>Node (Basic concepts clear)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>25. </span>Express (Basic concepts clear)</li>
                             </ul>
                             <div>
                                 <div className='flex items-center my-3'>

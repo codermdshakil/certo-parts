@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmModal = ({ deleteOrder, setdeleteOrder, refetch }) => {
+const DeleteConfirmModal = ({ deleteOrder, setdeleteorder, refetch }) => {
 
     const { productName } = deleteOrder;
 
@@ -19,7 +19,7 @@ const DeleteConfirmModal = ({ deleteOrder, setdeleteOrder, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    setdeleteOrder(null)
+                    setdeleteorder(null)
                     refetch();
                     toast.success(`Deleted ${productName} Successfully `);
                 }

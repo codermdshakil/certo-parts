@@ -12,10 +12,10 @@ const MyOrders = () => {
 
     const navigate = useNavigate();
     const [user, userLoading] = useAuthState(auth);
-    const [deleteOrder, setdeleteOrder] = useState(null);
+    const [deleteOrder, setdeleteorder] = useState(null);
     const { email, displayName } = user;
 
-    const { data: orders, isLoading, refetch } = useQuery('myOrders', () =>
+    const { data: orders, isLoading, refetch } = useQuery('signleorders', () =>
         fetch(`https://secret-reaches-23415.herokuapp.com/orders?email=${email}`, {
             method: 'GET',
             headers: {
@@ -39,7 +39,7 @@ const MyOrders = () => {
     return (
         <div>
             <div>
-                <h2 className='text-2xl text-center mt-6 mb-5'> <span className='text-3xl font-bold text-green-500'>{displayName} </span> Your all Orders<span className='text-primary font-bold'>({orders?.length})</span></h2>
+                <h2 className='text-2xl text-center mt-6 mb-5'> <span className='text-3xl font-bold text-green-500'>{displayName} </span> Your all Orders<span className='text-primary font-bold'>({orders?.length && orders?.length})</span></h2>
             </div>
             <div className="overflow-x-auto">
                 <table className="table table-zebra  w-full">
@@ -48,17 +48,17 @@ const MyOrders = () => {
                             <th>No.</th>
                             <th>Name</th>
                             <th>Product Name</th>
-                            <th>Order Quantity</th>
+                            <th>Payment</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             orders?.map((order, index) => <OrderRow
-                                key={order._id}
+                                key={order?._id}
                                 order={order}
                                 index={index}
-                                setdeleteOrder={setdeleteOrder}
+                                setdeleteorder={setdeleteorder}
                             >
                             </OrderRow>
                             )
@@ -66,7 +66,7 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
-            {deleteOrder && <DeleteConfirmModal setdeleteOrder={setdeleteOrder} refetch={refetch} deleteOrder={deleteOrder}></DeleteConfirmModal>}
+            {deleteOrder && <DeleteConfirmModal setdeleteorder={setdeleteorder} refetch={refetch} deleteOrder={deleteOrder}></DeleteConfirmModal>}
         </div>
     );
 };
