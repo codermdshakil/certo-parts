@@ -25,7 +25,6 @@ const OrderRow = ({ order, index, setdeleteorder }) => {
                 {order.paid ? '' : <label  setdeleteorder={setdeleteorder} htmlFor="delete-Confirm-Modal" className="btn btn-sm border-0 bg-red-300 text-red-500  modal-button"><FontAwesomeIcon   icon={faTrashCan} />
                 </label>}
             </td>
-            
         </tr>
     );
 };

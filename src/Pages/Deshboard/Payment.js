@@ -40,7 +40,11 @@ const Payment = () => {
 
     return (
         <div>
-            <div class="card md:w-1/2 w-5/6 my-10 mx-auto   bg-base-100 shadow-xl">
+            <div class="card md:w-1/2 w-5/6 my-10 mx-auto   bg-base-100 shadow-xl"
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000"
+            >
                 <div class="card-body">
                     <img src={productImg} className="w-5/6 mx-auto p-3 mb-4" alt="ProductImg" />
                     <p className='text-xl  font-bold text-indigo-700'>Hello!, <span className='font-bold text-green-500'>{userName}</span></p>

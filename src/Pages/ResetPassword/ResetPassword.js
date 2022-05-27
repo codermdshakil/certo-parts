@@ -30,10 +30,13 @@ const ResetPassword = () => {
     }
 
     return (
-        <div className='flex items-center justify-center h-[80vh]'>
+        <div className='flex items-center justify-center h-[80vh]'
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1200"
+        >
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-
                     <div className='flex items-start'>
                         <div className="tooltip" data-tip="login">
                             <button className=' font-bold '> <Link to='/login'><FontAwesomeIcon icon={faAngleLeft} /></Link> </button>

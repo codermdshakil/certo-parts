@@ -15,7 +15,9 @@ const Reviews = () => {
 
     return (
         <div>
-            <div className='mt-24 mb-16 px-10' id='reviews'>
+            <div className='mt-24 mb-16 px-10' id='reviews'
+                data-aos="fade-down"
+            >
                 <h1 className='text-3xl font-bold text-center'>What <span className='font-bold text-secondary'> Client's </span>  say about Us</h1>
                 <h3 className='text-lg text-center text-primary'> Clients Reviews({allReviews.length})</h3>
             </div>

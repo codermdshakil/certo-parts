@@ -10,7 +10,11 @@ const Review = ({ r }) => {
     const { name, img, address, title, des, star } = r;
 
     return (
-        <article className='p-5 border-2 border-white hover:border-2 hover:border-yellow-300 rounded-xl custom_shadow md:w-full w-5/6 mx-auto mb-10' >
+        <article className='p-5 border-2 border-white hover:border-2 hover:border-yellow-300 rounded-xl custom_shadow md:w-full w-5/6 mx-auto mb-10'
+            data-aos="zoom-in"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+        >
             <div>
                 <div className='flex justify-evenly'>
                     <div className="avatar">
@@ -27,7 +31,7 @@ const Review = ({ r }) => {
                                 <FontAwesomeIcon className='check_icon' icon={faCheck} />
                             </div>
                         </div>
-                        <h4 className='text-slate-600'>{address} <FontAwesomeIcon className='text-green-600' icon={ faLocationDot }></FontAwesomeIcon> </h4>
+                        <h4 className='text-slate-600'>{address} <FontAwesomeIcon className='text-green-600' icon={faLocationDot}></FontAwesomeIcon> </h4>
                     </div>
                 </div>
                 <h2 className=' mt-4 text-2xl'>{title}</h2>
@@ -38,7 +42,7 @@ const Review = ({ r }) => {
                             <FontAwesomeIcon className='star text-xl' icon={faStar}></FontAwesomeIcon>
                             <FontAwesomeIcon className='star text-xl' icon={faStar}></FontAwesomeIcon>
                             <FontAwesomeIcon className='star text-xl' icon={faStar}></FontAwesomeIcon>
-                            {star > 4.5 ?  <FontAwesomeIcon className='star text-xl mr-1' icon={faStar}></FontAwesomeIcon>:<FontAwesomeIcon className='star text-xl mr-1'  icon={faStarHalfStroke}></FontAwesomeIcon>}
+                            {star > 4.5 ? <FontAwesomeIcon className='star text-xl mr-1' icon={faStar}></FontAwesomeIcon> : <FontAwesomeIcon className='star text-xl mr-1' icon={faStarHalfStroke}></FontAwesomeIcon>}
                         </div>
                         <div>
                             <h4>{star}</h4>

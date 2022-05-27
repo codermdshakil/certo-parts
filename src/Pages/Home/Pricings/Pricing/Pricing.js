@@ -1,12 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faStore , faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faStore, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Pricing = ({ p }) => {
 
     const { name, service1, service2, service3, service4, service5, price } = p;
     return (
-        <article className={` ${name === 'Advanced' ? 'uniqe':''} border-2 border-white hover:border-2 hover:border-green-500  md:w-full w-5/6 mx-auto p-5 relative rounded-lg bg-white pricing_box`}>
+        <article className={` ${name === 'Advanced' ? 'uniqe' : ''} border-2 border-white hover:border-2 hover:border-green-500  md:w-full w-5/6 mx-auto p-5 relative rounded-lg bg-white pricing_box`}
+            data-aos="fade-up"
+            data-aos-duration="2500"
+        >
             <div>
                 <div >
                     <div className="flex justify-center my-4">
@@ -14,7 +17,7 @@ const Pricing = ({ p }) => {
                             <h3 className='text-3xl font-semibold mb-2'>{name}</h3>
                         </div>
                         <div>
-                            {name === 'Premium' ? <FontAwesomeIcon className='store_icon_style text-4xl' icon={ faStore }></FontAwesomeIcon> : ''}
+                            {name === 'Premium' ? <FontAwesomeIcon className='store_icon_style text-4xl' icon={faStore}></FontAwesomeIcon> : ''}
                         </div>
                     </div>
                     <h3 className='text-2xl mb-4 text-center '>$ {price} <span className='text-lg text-slate-500'>/m</span></h3>

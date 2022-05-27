@@ -28,11 +28,11 @@ const Login = () => {
 
     let loginError;
 
-    if (gLoading || loading ) {
+    if (gLoading || loading) {
         return <Spinner />
     }
 
-    if (error || gError ) {
+    if (error || gError) {
         loginError = error?.message || gError?.message;
     }
 
@@ -49,7 +49,11 @@ const Login = () => {
     }
 
     return (
-        <div className='flex justify-center items-center lg:h-[120vh] md:h-[80vh] h-screen'>
+        <div className='flex justify-center items-center lg:h-[120vh] md:h-[80vh] h-screen'
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+        >
             <div className=" block card md:w-96 w-10/12 mx-auto bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-3xl font-semibold py-2 ">Login</h2>

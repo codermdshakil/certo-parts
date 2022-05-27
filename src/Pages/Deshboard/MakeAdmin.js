@@ -38,8 +38,16 @@ const MakeAdmin = () => {
     return (
         <div className='lg:px-5 lg:py-7 bg-slate-200 rounded-xl h-screen'>
             <div className="overflow-x-auto ">
-                <h1 className='text-center text-3xl font-semibold mb-4 text-green-500'>You can  Make an  <span className='text-indigo-600'> Admin</span></h1>
-                <table className="table  table-zebra lg:w-11/12 md:w-10/12 mx-auto custom_shadow mb-10 rounded-xl w-full">
+                <h1 className='text-center text-3xl font-semibold mb-4 text-green-500'
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+                >You can  Make an  <span className='text-indigo-600'> Admin</span></h1>
+                <table className="table  table-zebra lg:w-11/12 md:w-10/12 mx-auto custom_shadow mb-10 rounded-xl w-full"
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000"
+                >
                     <thead>
                         <tr>
                             <th></th>

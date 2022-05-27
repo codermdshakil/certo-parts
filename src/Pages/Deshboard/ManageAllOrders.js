@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Spinner from '../../Shared/Spinner';
 import ManageOrderRow from './ManageOrderRow';
@@ -10,7 +10,7 @@ const ManageAllOrders = () => {
 
     const [deleteOrder, setDeleteOrder] = useState(null);
 
-    const { data: manageAllOrders, isLoading , refetch} = useQuery('manageorder', () =>
+    const { data: manageAllOrders, isLoading, refetch } = useQuery('manageorder', () =>
         fetch(`https://secret-reaches-23415.herokuapp.com/allorders`)
             .then(res => res.json())
     );
@@ -23,7 +23,11 @@ const ManageAllOrders = () => {
     return (
         <div>
             <div class="overflow-x-auto  bg-slate-200 rounded-xl">
-                <table class="table table-zebra lg:w-11/12   mx-auto custom_shadow my-10 rounded-xl w-full">
+                <table class="table table-zebra lg:w-11/12   mx-auto custom_shadow my-10 rounded-xl w-full"
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000"
+                >
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -37,17 +41,17 @@ const ManageAllOrders = () => {
                     <tbody>
                         {
                             manageAllOrders.map((manageOrder, index) => <ManageOrderRow
-                            key={manageOrder._id}
-                            index={index}
-                            refetch={refetch}
-                            manageOrder={manageOrder}
-                            setDeleteOrder={setDeleteOrder}
+                                key={manageOrder._id}
+                                index={index}
+                                refetch={refetch}
+                                manageOrder={manageOrder}
+                                setDeleteOrder={setDeleteOrder}
                             ></ManageOrderRow>)
                         }
                     </tbody>
                 </table>
             </div>
-            {deleteOrder && <DeleteOrderModal setDeleteOrder={setDeleteOrder} deleteOrder={deleteOrder} refetch={refetch}></DeleteOrderModal> }
+            {deleteOrder && <DeleteOrderModal setDeleteOrder={setDeleteOrder} deleteOrder={deleteOrder} refetch={refetch}></DeleteOrderModal>}
         </div>
     );
 };

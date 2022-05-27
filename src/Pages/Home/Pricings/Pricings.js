@@ -19,7 +19,11 @@ const Pricings = () => {
 
     return (
         <div className='mt-5' id='pricing'>
-            <div className='text-center mb-10'>
+            <div className='text-center mb-10'
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="600"
+            >
                 <h2 className='text-4xl font-bold mb-3'> <span className='text-secondary'>Pricing</span> and Plans</h2>
                 <div className='flex justify-center items-center'>
                     <h3>Choose your plan <span className='font-bold'>Monthly</span> </h3>

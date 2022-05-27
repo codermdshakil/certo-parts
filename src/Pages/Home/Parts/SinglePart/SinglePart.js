@@ -2,11 +2,13 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const SinglePart = ({ p, handleOrder}) => {
-    const { _id ,name, img, price, des, minQuantity, availableQuantity } = p;
+const SinglePart = ({ p, handleOrder }) => {
+    const { _id, name, img, price, des, minQuantity, availableQuantity } = p;
 
     return (
-        <article className='lg:w-full md:w-full w-10/12   mx-auto border-1 rounded-lg hover:shadow shadow-slate-300 mb-10 shadow-lg border-slate-400 '>
+        <article className='lg:w-full md:w-full w-10/12   mx-auto border-1 rounded-lg hover:shadow shadow-slate-300 mb-10 shadow-lg border-slate-400'
+            data-aos="fade-up"
+        >
             <div className='p-7'>
                 <img src={img} className="w-full mx-auto mb-2 hover:scale-105 duration-150" alt="parts_image" />
             </div>

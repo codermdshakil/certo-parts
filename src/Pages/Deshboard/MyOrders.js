@@ -40,9 +40,18 @@ const MyOrders = () => {
         <div>
             <div className="overflow-x-auto bg-slate-200 rounded-xl">
                 <div>
-                    <h2 className='text-xl text-center mt-6 mb-5'> <span className='text-xl font-semibold text-green-500'>{displayName} Your all Orders </span> <span className='text-primary font-bold'>({orders?.length && orders?.length})</span></h2>
+                    <h2 className='text-xl text-center mt-6 mb-5'
+                        data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="1400"
+
+                    > <span className='text-xl font-semibold text-green-500'>{displayName} Your all Orders </span> <span className='text-primary font-bold'>({orders?.length && orders?.length})</span></h2>
                 </div>
-                <table className="table table-zebra lg:w-10/12    mx-auto custom_shadow mb-10 rounded-xl w-full">
+                <table className="table table-zebra lg:w-10/12    mx-auto custom_shadow mb-10 rounded-xl w-full"
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000"
+                >
                     <thead>
                         <tr>
                             <th>No.</th>

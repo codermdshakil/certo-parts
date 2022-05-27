@@ -74,7 +74,11 @@ const Order = () => {
     return (
         <div className='md:px-20 px-10 mt-20 mb-24'>
             <div className='md:flex justify-center mx-auto items-center grid grid-cols-1 '>
-                <div className='lg:w-4/12 md:w-6/12 w-full   bg-white custom_shadow  mr-10 rounded-xl'>
+                <div className='lg:w-4/12 md:w-6/12 w-full   bg-white custom_shadow  mr-10 rounded-xl'
+                    data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000"
+                >
                     <div>
                         <img src={img} className="w-full mx-auto p-4" alt="product_image" />
                     </div>
@@ -87,7 +91,11 @@ const Order = () => {
                         <p>{des}</p>
                     </div>
                 </div>
-                <div className='lg:w-4/12 md:w-6/12 md:mt-0 mt-16  rounded-xl custom_shadow' >
+                <div className='lg:w-4/12 md:w-6/12 md:mt-0 mt-16  rounded-xl custom_shadow'
+                    data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1400"
+                >
                     <div className='p-5'>
                         <h2 className='text-2xl font-bold text-center mb-4'>Order <span className='text-secondary'>Infomation</span></h2>
                         <form onSubmit={handleUserOrder}>

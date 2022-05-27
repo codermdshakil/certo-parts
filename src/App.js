@@ -22,7 +22,9 @@ import AddProduct from './Pages/Deshboard/AddProduct';
 import ManageProducts from './Pages/Deshboard/ManageProducts';
 import ManageAllOrders from './Pages/Deshboard/ManageAllOrders';
 import Payment from './Pages/Deshboard/Payment';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 function App() {

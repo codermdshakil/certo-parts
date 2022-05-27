@@ -26,14 +26,14 @@ const MyProfile = () => {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-        .then(res => {
-            if (res.status === 401 || res.status === 403) {
-                localStorage.removeItem('accessToken')
-                signOut(auth);
-               return navigate('/');
-            }
-            return res.json()
-        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    localStorage.removeItem('accessToken')
+                    signOut(auth);
+                    return navigate('/');
+                }
+                return res.json()
+            })
     );
 
     if (isLoading) {
@@ -70,8 +70,12 @@ const MyProfile = () => {
 
     return (
         <div>
-            <div className=' bg-slate-200 lg:p-16 md:py-10 py-16 md:px-5 rounded-xl grid gap-x-10 md:grid-cols-2 grid-cols-1 mt-5 mb-10 '>
-                <div className='md:w-full w-11/12 mx-auto p-6 md:mb-0 mb-10 rounded-xl custom_shadow  bg-white'>
+            <div className=' bg-slate-200 lg:p-16 md:py-10 py-16 md:px-5 rounded-xl grid gap-x-10 md:grid-cols-2 grid-cols-1 mt-5 mb-10 '
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000"
+            >
+                <article className='md:w-full w-11/12 mx-auto p-6 md:mb-0 mb-10 rounded-xl custom_shadow  bg-white'>
                     <h1 className='text-2xl font-bold my-3'>My Profile</h1>
                     <div className="my-info">
                         <h3 className='text-xxl font-semibold text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faUser} /> Full Name</h3>
@@ -86,11 +90,15 @@ const MyProfile = () => {
                         {updatedUser ? <h4>{updatedUser?.userAddress}</h4> : 'please Update!'}
                         <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faHome} /> Location</h3>
                         {updatedUser ? <h4>{updatedUser?.userLocation}</h4> : 'Please Update!'}
-                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={ faLink } /> Linkedin Profile Url</h3>
+                        <h3 className='text-xxl font-semibold mt-3 text-gray-600'> <FontAwesomeIcon className='mr-1 text-primary' icon={faLink} /> Linkedin Profile Url</h3>
                         {updatedUser ? <h4>{updatedUser?.userLinkedinUrl}</h4> : 'Please Update!'}
                     </div>
-                </div>
-                <div className='p-6 md:w-full w-11/12  rounded-xl mx-auto custom_shadow bg-white'>
+                </article>
+                <article className='p-6 md:w-full w-11/12  rounded-xl mx-auto custom_shadow bg-white'
+                    data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1200"
+                >
                     <h1 className='text-2xl font-bold my-3'>Update Profile </h1>
                     <div className='update-info '>
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -231,10 +239,10 @@ const MyProfile = () => {
                                     {errors.location?.type === 'required' && <span className="label-text-alt text-red-500">{errors.location.message}</span>}
                                 </label>
                             </div>
-                            <button type='submit' className='btn w-full text-white'>Update Profile <FontAwesomeIcon className='ml-2' icon={ faPaperPlane } /> </button>
+                            <button type='submit' className='btn w-full text-white'>Update Profile <FontAwesomeIcon className='ml-2' icon={faPaperPlane} /> </button>
                         </form>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     );

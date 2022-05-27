@@ -64,7 +64,11 @@ const SignUp = () => {
     }
 
     return (
-        <div className='flex items-center justify-center lg:h-[120vh] md:h-[80vh] h-screen '>
+        <div className='flex items-center justify-center lg:h-[120vh] md:h-[80vh] h-screen '
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1200"
+        >
             <div className="card  md:w-96 w-10/12 mx-auto bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-3xl font-semibold ">Sign In</h2>

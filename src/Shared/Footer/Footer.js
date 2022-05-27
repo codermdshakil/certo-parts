@@ -20,7 +20,11 @@ const Footer = () => {
         <div className='footer-section mt-20 py-12' id='footer'>
             <div className='md:px-20 px-10'>
                 <div className='grid gap-10 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 footer_content'>
-                    <div className=' md:w-full w-11/12'>
+                    <div className=' md:w-full w-11/12'
+                        data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="500"
+                    >
                         <h1 className='hero_title mb-1'>Certo <span className='parts_title'>Parts</span>
                         </h1>
                         <p className='text-sm mb-2'>A bicycle also called a pedal cycle, bike or cycle, is a human-powered or motor-powered assisted, pedal-driven, single-track vehicle, having two wheels attached to a frame.</p>
@@ -28,7 +32,11 @@ const Footer = () => {
                         <p> <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon> <span className='text-sm'>ahmedshakil0512@gmail.com </span></p>
                         <p> <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>  <span className='text-sm'>+8801729107200 </span></p>
                     </div>
-                    <div className='md:w-full w-11/12'>
+                    <div className='md:w-full w-11/12'
+                        data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000"
+                    >
                         <h2 className='text-2xl font-bold text-white  mb-2'>Quick Links</h2>
                         <a href='home#banner'>Banner</a>  <br />
                         <a href='home#parts'>Parts</a>  <br />
@@ -38,7 +46,11 @@ const Footer = () => {
                         <a href='home#contact'>Contact</a> <br />
                         <a href='home#footer'>Footer</a>
                     </div>
-                    <div className='md:w-full w-11/12'>
+                    <div className='md:w-full w-11/12'
+                        data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                    >
                         <h2 className='text-2xl font-bold text-white mb-2'> Follow Us </h2>
                         <div className='social_mediaIcon flex mt-3 mb-2'>
                             <img src={fbLogo} alt="fb_logo" />
@@ -48,7 +60,11 @@ const Footer = () => {
                         </div>
                         <img src={paymentImg} className="mt-3" alt="paymentImg_logo " />
                     </div>
-                    <div className='md:w-full w-11/12'>
+                    <div className='md:w-full w-11/12'
+                        data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="2000"
+                    >
                         <h2 className='text-2xl font-bold text-white mb-2'>NewsLetter</h2>
                         <form onSubmit={handleNewLetterEmail}>
                             <input type="text" placeholder='Email' name='email' className='w-full py-3 px-3 rounded-lg' required />

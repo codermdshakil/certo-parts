@@ -62,7 +62,11 @@ const AddReview = () => {
 
     return (
         <div className='bg-slate-200 rounded-xl md:p-10 p-2'>
-            <div className="card mx-auto lg:w-5/12 md:w-6/12 w-11/12 my-10  bg-base-100 shadow-xl">
+            <div className="card mx-auto lg:w-5/12 md:w-6/12 w-11/12 my-10  bg-base-100 shadow-xl"
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000"
+            >
                 <div className="card-body">
                     <h2 className=" text-green-500 text-2xl font-bold text-center py-4">Review Information</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>

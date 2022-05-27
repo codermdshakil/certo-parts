@@ -20,7 +20,11 @@ const ManageProducts = () => {
     return (
         <div>
             <div class="overflow-x-auto bg-slate-200 rounded-xl mb-5">
-                <table class="table table-zebra lg:w-11/12  md:mx-10 my-10 mx-auto custom_shadow mb-10 rounded-xl w-full ">
+                <table class="table table-zebra lg:w-11/12  md:mx-10 my-10 mx-auto custom_shadow mb-10 rounded-xl w-full "
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000"
+                >
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -34,17 +38,16 @@ const ManageProducts = () => {
                     <tbody>
                         {
                             allproducts.map((product, index) => <ProductRow
-                            key={product._id}
-                            product={product}
-                            index={index}
-                            setdeleteProduct={setdeleteProduct}
+                                key={product._id}
+                                product={product}
+                                index={index}
+                                setdeleteProduct={setdeleteProduct}
                             ></ProductRow>)
-
                         }
                     </tbody>
                 </table>
             </div>
-            {deleteProduct && <DeleteProductModal setdeleteProduct={setdeleteProduct} refetch={refetch} deleteProduct={deleteProduct}></DeleteProductModal> }
+            {deleteProduct && <DeleteProductModal setdeleteProduct={setdeleteProduct} refetch={refetch} deleteProduct={deleteProduct}></DeleteProductModal>}
         </div>
     );
 };
