@@ -105,7 +105,7 @@ const AddReview = () => {
                                 {...register("photo", {
                                     required: {
                                         value: true,
-                                        message: "Photo is required"
+                                        message: "Image is required"
                                     }
                                 })}
                             />
