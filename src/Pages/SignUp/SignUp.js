@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 import Spinner from '../../Shared/Spinner';
 import googleLogo from '../../Images/google.png';
 import useToken from '../../hooks/useToken';
+import usePageTitle from '../../hooks/usePageTitle';
 
 
 const SignUp = () => {
@@ -69,6 +70,9 @@ const SignUp = () => {
             data-aos-easing="linear"
             data-aos-duration="1200"
         >
+            {
+                usePageTitle('SignUp')
+            }
             <div className="card  md:w-96 w-10/12 mx-auto bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-3xl font-semibold ">Sign In</h2>

@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import Spinner from '../../Shared/Spinner';
 import ManageOrderRow from './ManageOrderRow';
 import DeleteOrderModal from '../../Pages/Deshboard/DeleteOrderModal';
+import usePageTitle from '../../hooks/usePageTitle';
 
 
 
@@ -22,8 +23,11 @@ const ManageAllOrders = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto  bg-slate-200 rounded-xl">
-                <table class="table table-zebra lg:w-11/12   mx-auto custom_shadow my-10 rounded-xl w-full"
+            {
+                usePageTitle("Manage Order's")
+            }
+            <div className="overflow-x-auto  bg-slate-200 rounded-xl">
+                <table className="table table-zebra lg:w-11/12   mx-auto custom_shadow my-10 rounded-xl w-full"
                     data-aos="fade-up"
                     data-aos-easing="linear"
                     data-aos-duration="1000"

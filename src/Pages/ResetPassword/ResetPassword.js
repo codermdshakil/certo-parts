@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 import Spinner from '../../Shared/Spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
+import usePageTitle from '../../hooks/usePageTitle';
 
 const ResetPassword = () => {
 
@@ -35,6 +36,9 @@ const ResetPassword = () => {
             data-aos-easing="linear"
             data-aos-duration="1200"
         >
+            {
+                usePageTitle('Reset Password')
+            }
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <div className='flex items-start'>

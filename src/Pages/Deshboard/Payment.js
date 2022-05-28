@@ -40,15 +40,15 @@ const Payment = () => {
 
     return (
         <div>
-            <div class="card md:w-1/2 w-5/6 my-10 mx-auto   bg-base-100 shadow-xl"
+            <div className="card md:w-1/2 w-5/6 my-10 mx-auto   bg-base-100 shadow-xl"
                 data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="1000"
             >
-                <div class="card-body">
+                <div className="card-body">
                     <img src={productImg} className="w-5/6 mx-auto p-3 mb-4" alt="ProductImg" />
                     <p className='text-xl  font-bold text-indigo-700'>Hello!, <span className='font-bold text-green-500'>{userName}</span></p>
-                    <h2 class="card-title">Pay For <span className='text-primary'>{productName}</span></h2>
+                    <h2 className="card-title">Pay For <span className='text-primary'>{productName}</span></h2>
                     <h3 className='text-lg font-medium'>Product Price : <span className='text-yellow-500 font-bold'>${productPrice}</span></h3>
                     <h4 className='text-lg font-medium'>Your orderd Products: <span className='font-bold'>{orderQuantity}</span></h4>
                     <h4 className='text-lg font-medium'>Your Phone: <span className='text-teal-500'>{phone}</span></h4>
@@ -57,9 +57,9 @@ const Payment = () => {
                     <p className='text-gray-600'>{productDes}</p>
                 </div>
             </div>
-            <div class="card  md:w-1/2 w-5/6 my-10 mx-auto flex-shrink-0  shadow-2xl bg-base-100">
+            <div className="card  md:w-1/2 w-5/6 my-10 mx-auto flex-shrink-0  shadow-2xl bg-base-100">
                 <h3 className='text-xl  px-8 text-indigo-700 font-bold'>Payment Information</h3>
-                <div class="card-body">
+                <div className="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckOutForm singleOrder={singleOrder} />
                     </Elements>

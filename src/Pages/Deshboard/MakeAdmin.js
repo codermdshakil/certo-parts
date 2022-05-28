@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import usePageTitle from '../../hooks/usePageTitle';
 import Spinner from '../../Shared/Spinner';
 import DeleteUserModal from './DeleteUserModal';
 import UserRow from './UserRow';
@@ -37,6 +38,9 @@ const MakeAdmin = () => {
 
     return (
         <div className='lg:px-5 lg:py-7 bg-slate-200 rounded-xl h-screen'>
+            {
+                usePageTitle('Make Admin')
+            }
             <div className="overflow-x-auto ">
                 <h1 className='text-center text-3xl font-semibold mb-4 text-green-500'
                 data-aos="fade-down"

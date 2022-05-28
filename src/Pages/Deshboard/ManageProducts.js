@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import usePageTitle from '../../hooks/usePageTitle';
 import Spinner from '../../Shared/Spinner';
 import DeleteProductModal from './DeleteProductModal';
 import ProductRow from './ProductRow';
@@ -19,8 +20,11 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto bg-slate-200 rounded-xl mb-5">
-                <table class="table table-zebra lg:w-11/12  md:mx-10 my-10 mx-auto custom_shadow mb-10 rounded-xl w-full "
+            {
+                usePageTitle("Manage Product's")
+            }
+            <div className="overflow-x-auto bg-slate-200 rounded-xl mb-5">
+                <table className="table table-zebra lg:w-11/12  md:mx-10 my-10 mx-auto custom_shadow mb-10 rounded-xl w-full "
                     data-aos="fade-up"
                     data-aos-easing="linear"
                     data-aos-duration="1000"

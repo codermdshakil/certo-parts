@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Spinner from '../../Shared/Spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import usePageTitle from '../../hooks/usePageTitle';
 
 const AddReview = () => {
 
@@ -62,6 +63,9 @@ const AddReview = () => {
 
     return (
         <div className='bg-slate-200 rounded-xl md:p-10 p-2'>
+            {
+                usePageTitle('Add Review')
+            }
             <div className="card mx-auto lg:w-5/12 md:w-6/12 w-11/12 my-10  bg-base-100 shadow-xl"
                 data-aos="fade-down"
                 data-aos-easing="linear"

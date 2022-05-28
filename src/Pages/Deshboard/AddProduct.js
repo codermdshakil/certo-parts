@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import usePageTitle from '../../hooks/usePageTitle';
 import Spinner from '../../Shared/Spinner';
 
 const AddProduct = () => {
@@ -58,10 +59,13 @@ const AddProduct = () => {
     return (
         <div className=' bg-slate-200 rounded-xl p-10'>
             <div className="card mx-auto lg:w-5/12 md:w-6/12 w-11/12 my-10  bg-base-100 shadow-xl"
-            data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000"
             >
+                {
+                    usePageTitle('Add Product')
+                }
                 <div className="card-body">
                     <h2 className=" text-green-500 text-2xl font-bold text-center py-4">Product Information</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>

@@ -7,6 +7,7 @@ import DeleteConfirmModal from './DeleteConfirmModal';
 import OrderRow from './OrderRow';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import usePageTitle from '../../hooks/usePageTitle';
 
 const MyOrders = () => {
 
@@ -38,6 +39,9 @@ const MyOrders = () => {
 
     return (
         <div>
+            {
+                usePageTitle('Orders')
+            }
             <div className="overflow-x-auto bg-slate-200 rounded-xl">
                 <div>
                     <h2 className='text-xl text-center mt-6 mb-5'

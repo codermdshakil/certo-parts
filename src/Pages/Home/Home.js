@@ -1,4 +1,5 @@
 import React from 'react';
+import usePageTitle from '../../hooks/usePageTitle';
 import Banner from '../../Pages/Home/Banner/Banner';
 import BSummery from './BSummery/BSummery';
 import ContactUs from './ContactUs/ContactUs';
@@ -10,6 +11,9 @@ import Reviews from './Reviews/Reviews';
 const Home = () => {
     return (
         <div>
+            {
+                usePageTitle('Home')
+            }
             <div className='md:px-20'>
                 <Banner />
                 <Parts />

@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faEnvelope, faHome, faLink, faLocationDot, faPaperPlane, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import usePageTitle from '../../hooks/usePageTitle';
 
 
 
@@ -70,11 +71,15 @@ const MyProfile = () => {
 
     return (
         <div>
+
             <div className=' bg-slate-200 lg:p-16 md:py-10 py-16 md:px-5 rounded-xl grid gap-x-10 md:grid-cols-2 grid-cols-1 mt-5 mb-10 '
                 data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="1000"
             >
+                {
+                    usePageTitle('My Profile')
+                }
                 <article className='md:w-full w-11/12 mx-auto p-6 md:mb-0 mb-10 rounded-xl custom_shadow  bg-white'>
                     <h1 className='text-2xl font-bold my-3'>My Profile</h1>
                     <div className="my-info">

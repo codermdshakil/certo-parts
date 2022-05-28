@@ -1,8 +1,12 @@
 import React from 'react';
+import usePageTitle from '../../hooks/usePageTitle';
 import codeImg from '../../Images/codeSS.PNG';
 const Blogs = () => {
     return (
         <div className='md:px-20 px-10' data-aos="fade-down"   data-aos-duration="1000">
+            {
+                usePageTitle('Blogs')
+            }
             <div className='lg:w-8/12 md:w-10/12 md:p-10 p-3 my-10 bg-white custom_shadow rounded-xl   mx-auto'>
                 <h2 className='text-2xl mb-6 font-bold text-center'> <span className='text-3xl font-bold text-secondary'>Q</span>uestion and <span className='text-3xl font-bold text-primary'>A</span>nswer</h2>
                 <div tabIndex="0" className=" mb-4 collapse collapse-arrow border border-base-300 bg-base-100   rounded-xl">

@@ -8,6 +8,8 @@ const SinglePart = ({ p, handleOrder }) => {
     return (
         <article className='lg:w-full md:w-full w-10/12   mx-auto border-1 rounded-lg hover:shadow shadow-slate-300 mb-10 shadow-lg border-slate-400'
             data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
         >
             <div className='p-7'>
                 <img src={img} className="w-full mx-auto mb-2 hover:scale-105 duration-150" alt="parts_image" />

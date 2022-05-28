@@ -7,6 +7,8 @@ import Spinner from '../../Shared/Spinner';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import usePageTitle from '../../hooks/usePageTitle';
+
 
 const Order = () => {
 
@@ -73,6 +75,9 @@ const Order = () => {
 
     return (
         <div className='md:px-20 px-10 mt-20 mb-24'>
+            {
+                usePageTitle('Order')
+            }
             <div className='md:flex justify-center mx-auto items-center grid grid-cols-1 '>
                 <div className='lg:w-4/12 md:w-6/12 w-full   bg-white custom_shadow  mr-10 rounded-xl'
                     data-aos="fade-down"

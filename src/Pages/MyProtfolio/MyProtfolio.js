@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
 import skillImg from '../../Images/skill.png';
 import projectImg from '../../Images/project.png';
+import usePageTitle from '../../hooks/usePageTitle';
 
 
 
@@ -11,6 +12,9 @@ import projectImg from '../../Images/project.png';
 const MyProtfolio = () => {
     return (
         <div className='md:px-20 px-10'>
+            {
+                    usePageTitle('My Protfolio')
+            }
             <div className='lg:w-8/12 md:w-10/12 md:p-5 p-3 my-10 bg-white custom_shadow rounded-xl   mx-auto'>
                 <h2 className='text-center font-semibold md:text-3xl text-lg pt-2 '
                     data-aos="zoom-in-down"

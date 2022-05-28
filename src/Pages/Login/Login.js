@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 import googleLogo from '../../Images/google.png';
 import useToken from '../../hooks/useToken';
+import usePageTitle from '../../hooks/usePageTitle';
 
 
 const Login = () => {
@@ -54,6 +55,9 @@ const Login = () => {
             data-aos-easing="linear"
             data-aos-duration="1000"
         >
+            {
+                usePageTitle('Login')
+            }
             <div className=" block card md:w-96 w-10/12 mx-auto bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-3xl font-semibold py-2 ">Login</h2>
