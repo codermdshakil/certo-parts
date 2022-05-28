@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckOutForm from './CheckOutForm';
+import usePageTitle from '../../hooks/usePageTitle';
 const stripePromise = loadStripe('pk_test_51L3jjALU855FwpelvEFF1lhayVnwhsFA8lG47YRGnt8h1WhZqDUbhAEpDmfRi5joDwupldpEPvPfFTj4938Nzeq300XnaNjGkB');
 
 
@@ -40,6 +41,9 @@ const Payment = () => {
 
     return (
         <div>
+            {
+                usePageTitle('Payment')
+            }
             <div className="card md:w-1/2 w-5/6 my-10 mx-auto   bg-base-100 shadow-xl"
                 data-aos="fade-down"
                 data-aos-easing="linear"

@@ -42,7 +42,7 @@ const MyOrders = () => {
             {
                 usePageTitle('Orders')
             }
-            <div className="overflow-x-auto bg-slate-200 rounded-xl">
+            <div className="overflow-x-auto bg-slate-200 rounded-xl h-screen">
                 <div>
                     <h2 className='text-xl text-center mt-6 mb-5'
                         data-aos="fade-down"

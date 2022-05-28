@@ -10,6 +10,9 @@ const UserRow = ({ user, index, refetch, setDeleteUser }) => {
 
     const { email, role } = user;
 
+    console.log(user, 'from make admin')
+
+
 
     const navigate = useNavigate();
 
@@ -44,10 +47,12 @@ const UserRow = ({ user, index, refetch, setDeleteUser }) => {
             <td className='font-medium '>{email}</td>
             <td>{role ? <button onClick={handleMakeAdmin} className="btn btn-xs bg-green-500 border-0 text-white">Already Admin</button> : <button onClick={handleMakeAdmin} className="btn btn-xs">Make Admin</button>}</td>
             <td>
-                <button onClick={() => setDeleteUser(user)}>
-                    <label setDeleteUser={setDeleteUser} htmlFor="delete-user-Modal" className="btn btn-sm border-0 bg-red-300 text-red-500  modal-button"><FontAwesomeIcon icon={faTrashCan} />
-                    </label>
-                </button>
+                {role === 'admin' ? " " :
+                    <button onClick={() => setDeleteUser(user)}>
+                        <label setDeleteUser={setDeleteUser} htmlFor="delete-user-Modal" className="btn btn-sm border-0 bg-red-300 text-red-500  modal-button"><FontAwesomeIcon icon={faTrashCan} />
+                        </label>
+                    </button>
+                }
             </td>
         </tr>
     );
