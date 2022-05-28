@@ -10,9 +10,6 @@ const UserRow = ({ user, index, refetch, setDeleteUser }) => {
 
     const { email, role } = user;
 
-    console.log(user, 'from make admin')
-
-
 
     const navigate = useNavigate();
 
