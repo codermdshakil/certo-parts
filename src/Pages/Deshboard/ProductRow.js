@@ -19,7 +19,7 @@ const ProductRow = ({ setdeleteProduct, product, index }) => {
                 </div>
             </td>
             <td className='font-medium'>{name}</td>
-            <td className='font-bold text-yellow-500'>${price}</td>
+            <td className='font-bold text-blue-500'>${price}</td>
             <td className='font-bold px-16'>{availableQuantity}</td>
             <td onClick={() => setdeleteProduct(product)} >
                 <label setdeleteProduct={setdeleteProduct} htmlFor="delete-Confirm-Modal" className="btn btn-sm border-0 bg-red-300 text-red-500  modal-button">
