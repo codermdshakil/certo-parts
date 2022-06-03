@@ -72,16 +72,23 @@ const MyProtfolio = () => {
                                 <li className='font-semibold text-md'><span className='text-primary'>13. </span>Firebase</li>
                                 <li className='font-semibold text-md'><span className='text-primary'>14. </span>MongoDB </li>
                                 <li className='font-semibold text-md'><span className='text-primary'>15. </span>Cors</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>16. </span>Dotenv</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>17. </span>Helmet</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>18. </span>DaisyUi</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>19. </span>Rechart</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>20. </span>Swiper Js</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>21. </span>Stripe (For Payment)</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>22. </span>React Toastify</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>23. </span>Json Web Token (JWT)</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>24. </span>Node (Basic concepts clear)</li>
-                                <li className='font-semibold text-md'><span className='text-primary'>25. </span>Express (Basic concepts clear)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>16. </span>Git</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>17. </span>Figma</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>18. </span>Netlify</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>19. </span>Heroku</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>20. </span>NPM</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>21. </span>Postman</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>22. </span>Visual Studio</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>23. </span>Dotenv</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>24. </span>Helmet</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>25. </span>DaisyUi</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>26. </span>Rechart</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>27. </span>Swiper Js</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>28. </span>Stripe (For Payment)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>29. </span>React Toastify</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>30. </span>Json Web Token (JWT)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>31. </span>Node (Basic concepts clear)</li>
+                                <li className='font-semibold text-md'><span className='text-primary'>32. </span>Express (Basic concepts clear)</li>
                             </ul>
                             <div>
                                 <div className='flex items-center my-3'>
